@@ -1,0 +1,75 @@
+[
+{
+"action":"OpenApplication","description":"",
+"parameters":[{"locator":"NA","value":"URL"}],
+"examples":[{"action":"OpenApplication","locator":"","value":"URL to open the appliation","comment":"To Open the application"}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"put","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"put","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+}
+,
+{
+"action":"EditFieldSetValue","description":"types the desired value",
+"parameters":[{"locator":"Locator to identify the textbox","value":"Text you want to type"}],
+"examples":[{"action":"EditFieldSetValue","locator":"id=username","value":"hello","comment":"enters hello"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"DoubleClick","description":"Double click on the desired element",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"DoubleClick","locator":"id=username","value":"","comment":"double clicks on the element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"Button_Click","description":"click on the desired element",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"Button_Click","locator":"id=username","value":"","comment":"clicks on the element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"ComboBox_Index","description":"Select the desired value in a ComboBox menu using the index",
+"parameters":[{"locator":"Locator to identify the ComboBox menu","value":"Index of the option you wish to select"}],
+"examples":[{"action":"ComboBox_Index","locator":"id=month","value":"0","comment":"Selects the first month in the list of options specified."}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The selected option would be stored in the dynamic variable"}]
+},
+{
+"action":"ComboBox_Item","description":"Select the desired value in a ComboBox menu using the Item",
+"parameters":[{"locator":"Locator to identify the ComboBox menu","value":"Item of the option you wish to select"}],
+"examples":[{"action":"ComboBox_Item","locator":"id=month","value":"0","comment":"Selects the first month in the list of options specified."}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The selected option would be stored in the dynamic variable"}]
+},
+{
+"action":"Calendar","description":"Sets the given date in the specified element. This is used when selecting date from Calendar is difficult.",
+"parameters":[{"locator":"locator to identify the element","value":"Date you want to enter"}],
+"examples":[{"action":"Calendar","locator":"id=calendar","value":"01/01/2021","comment":"Sets the date to 01/01/2021 in the calendar with id=calendar"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"DatagridTable_ActivateCell","description":"Selects particular row and column from a DatagridTable",
+"parameters":[{"locator":"locator to identify the element","value":"Provide particular row and column number"}],
+"examples":[{"action":"DatagridTable_ActivateCell","locator":"id=DatagridTable","value":"4&3","comment":"Selects row and column from a DatagridTable"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"GetScreenshot","description":"Takes the screenshot of the Webpage",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"GetScreenshot","locator":"","value":"","comment":"Takes the screenshot"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"CloseDesktop","description":"Closes the Desktop",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"CloseDesktop","locator":"","value":"","comment":"Closes the Desktop"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"UiObject_Verify","description":"Verify the element matches with the expected value",
+"parameters":[{"locator":"Locator to identify the element","value":"Expected Value"}],
+"examples":[{"action":"UiObject_Verify","locator":"id=username","value":"hello","comment":"Checks if the element with id=username is hello"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the value attribute of the element as the variable"}]
+}
+]

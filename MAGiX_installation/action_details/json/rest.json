@@ -1,0 +1,152 @@
+[
+{
+"action":"assertContentType","description":"Asserts if the actual REST Content-type matches with the expected REST content-type.",
+"parameters":[{"locator":"actual Value","value":"expected Value"}],
+"examples":[{"action":"assertContentType","locator":"application/json","value":"application/json","comment":"Asserts if the content-type passed in the locator with the one in the value column"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable value to true/false depending on the result"}]
+},
+{
+"action":"assertLength","description":"Asserts if the actual length of the Parameter is same as expected length",
+"parameters":[{"locator":"actual Value","value":"expected Value"}],
+"examples":[{"action":"assertLength","locator":"5","value":"5","comment":"Asserts if 5 equal to 5"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable value to true/false depending on the result"}]
+},
+{
+"action":"assertNotNull","description":"Asserts if the value is not null.",
+"parameters":[{"locator":"value to assert","value":""}],
+"examples":[{"action":"assertNotNull","locator":"","value":"book","comment":"Asserts if the value \\u0027book\\u0027 is not null"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable value to true/false depending on the result"}]
+},
+{
+"action":"assertResponseValue","description":"Asserts if the actual http response value matches with the expected response value",
+"parameters":[{"locator":"actual Value","value":"expected Value"}],
+"examples":[{"action":"assertResponseValue","locator":"book","value":"book","comment":"Asserts if the response value \\u0027 book \\u0027 with the value \\u0027 book \\u0027"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable value to true/false depending on the result"}]
+},
+{
+"action":"assertStatusCode","description":"Asserts if the actual http status code matches with the expected status code",
+"parameters":[{"locator":"actual Value","value":"expected Value"}],
+"examples":[{"action":"assertStatusCode","locator":"200","value":"200","comment":"Asserts if status code 200 is equal to 200"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable value to true/false depending on the result"}]
+},
+{
+"action":"delete","description":" Performs REST DELETE Operation",
+"parameters":[{"locator":"URL end point of the API for DELETE operation","value":""}],
+"examples":[{"action":"delete","locator":"http://localhost:3000/books/5","value":"","comment":"Deletes the book with id = 5 "}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"get","description":"Performs REST GET Operation",
+"parameters":[{"locator":"URL end point of the API for GET operation","value":""}],
+"examples":[{"action":"get","locator":"http://localhost:3000/books","value":"","comment":"Returns the list of all books"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getHeader","description":"Gets the http header specified in the input as key",
+"parameters":[{"locator":"","value":"NA"}],
+"examples":[{"action":"getHeader","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"post","description":"Performs REST POST Operation",
+"parameters":[{"locator":"URL end point of the API for POST operation","value":"request file name along with file extension"}],
+"examples":[{"action":"post","locator":"http://localhost:3000/books","value":"BooksPost.json","comment":"Inserts a new Book record from the file BooksPost.json "}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"put","description":"Performs REST PUT Operation",
+"parameters":[{"locator":"URL end point of the API for PUT operation","value":"request file name along with file extension"}],
+"examples":[{"action":"put","locator":"http://localhost:3000/books/2","value":"BooksPut.json","comment":"Updates the Book with id = 2 from the file BooksPut.json"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"readJsonInt","description":"Reads individual Json Integer Value from the JsonFile",
+"parameters":[{"locator":"Json File File to be searched for the value","value":"Json Path expression"}],
+"examples":[{"action":"readJsonInt","locator":"Books.json","value":"details.index","comment":"Reads the integer at the given Json path from the file Books.json"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"variable that holds the json integer value"}]
+},
+{
+"action":"readJsonResourceCount","description":"Reads multiple values and return their count",
+"parameters":[{"locator":"Json File  to be searched for the value","value":"Json Path expression"}],
+"examples":[{"action":"readJsonResourceCount","locator":"Books.json","value":"$","comment":"Reads the count of books returned from the file Books.json"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"variable that holds the json value"}]
+},
+{
+"action":"readJsonStringValue","description":"Reads individual Json String Value from the JsonFile",
+"parameters":[{"locator":"Json File to be searched for the value","value":"Json Path expression"}],
+"examples":[{"action":"readJsonStringValue","locator":"Books.json","value":"title","comment":"Reads the title of the first book returned from the file Books.json"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"variable that holds the json value "}]
+},
+{
+"action":"readXmlStringValue","description":"Reads individual Xml String Value from the xmlFile",
+"parameters":[{"locator":"xml File to be searched for the value","value":"xml Path expression"}],
+"examples":[{"action":"readXmlStringValue","locator":"Books.json","value":"/books/title","comment":"Reads the title of the first book returned from the file Books.json"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"variable that holds the xml string value"}]
+},
+{
+"action":"removeHeaders","description":"removes all Header parameters",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"removeHeaders","locator":"NA","value":"NA","comment":"removes all Header parameters"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setHeader","description":"sets the http header specified in the input as key & value",
+"parameters":[{"locator":"key","value":"value"}],
+"examples":[{"action":"setHeader","locator":"Content-Type","value":"application/json","comment":"sets the header Content-Type to application/json"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setHeaders","description":"sets a number of http headers in one go(It clears the existing entries before adding new ones)",
+"parameters":[{"locator":"","value":"list of headers"}],
+"examples":[{"action":"setHeaders","locator":"","value":[{"Accept" : "application/json", "Content-Type" : "application/json"}],"comment":"sets a number of http headers"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"readXmlIntValue","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"readXmlIntValue","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+		"action":"fetchXMLvalue","description":"Captures a particular XML node value at the given locator",
+		"parameters":[{"locator":"locator to identify the XML node","value":"NA"}],
+		"examples":[{"action":"fetchXMLvalue","locator":"xpath=//OrderItem[1]/Id","value":"H:/abc.xml","comment":"Captures the XML node value at xpath=//OrderItem[1]/Id and stores it in a dynamic variable"}],
+		"dynamic":[{"name":"{V_Sr.No}","description":"Stores the XML node value as a variable"}]
+	},
+	{
+		"action":"getXMLNodeCount","description":"Gets the count of the number of nodes for the given xpath",
+		"parameters":[{"locator":"xpath to identify the XML node","value":"xml file"}],
+		"examples":[{"action":"getXMLNodeCount","locator":"//OrderItem[1]/Id","value":"H:/abc.xml","comment":"Captures the XML node count at xpath=//OrderItem[1]/Id and stores it in a dynamic variable"}],
+		"dynamic":[{"name":"{V_Sr.No}","description":"Stores the XML node count as a variable"}]
+	},
+{
+"action":"readTextFile","description":"Reads the content of the text file",
+"parameters":[{"locator":"Text File to be searched for the value","value":""}],
+"examples":[{"action":"readTextFile","locator":"Books.txt","value":"","comment":"Reads the content of the text file"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"variable that holds the content"}]
+},
+{
+"action":"getResponseHeaders","description":"Gets the response headers from the response",
+"parameters":[{"locator":"URL end point of the API for POST operation","value":"request file name along with file extension"}],
+"examples":[{"action":"getResponseHeaders","locator":"http://localhost:3000/books","value":"BooksPost.json","comment":"Gets the response header"}],
+"dynamic":[{"name":"{V_Sr.No}","description":""}]
+},
+{
+"action":"restSetProxy","description":"Sets the sytem proxy with host and port number",
+"parameters":[{"locator":"","value":"host and port separated by :"}],
+"examples":[{"action":"restSetProxy","locator":"","value":"127.0.0.1:8080","comment":"Sets the system proxy"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"sslCertiVerification","description":"Sets the ssl Certificate",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"sslCertiVerification","locator":"","value":"","comment":"Sets the ssl ceritificate"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"postURLEncoded","description":"Performs REST POST Operation with header url encoded",
+"parameters":[{"locator":"URL end point of the API for POST operation","value":"request file name along with file extension"}],
+"examples":[{"action":"postURLEncoded","locator":"http://localhost:3000/books","value":"BooksPost.json","comment":"Inserts a new Book record from the file BooksPost.json "}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+}
+]

@@ -1,0 +1,92 @@
+[
+{
+"action":"Requestfilecreator","description":"Creates a request file with given Data",
+"parameters":[{"locator":"Folder Path where Request file is created","value":"Request Content"}],
+"examples":[{"action":"Requestfilecreator","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"getSoapResponseFromWsdlFile","description":"Gets the Soap response from the given endpoint url and operation",
+"parameters":[{"locator":"Endpoint URL","value":"WSDL&OperationName&RequestFileName"}],
+"examples":[{"action":"getSoapResponseFromWsdlFile","locator":"http://127.0.0.1:8088/mockServiceSoapBinding","value":"http://127.0.0.1:8088/mockServiceSoapBinding?WSDL&login&Login.xml","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"RequestfilecreatorSpark","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"RequestfilecreatorSpark","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"copyReqRespToExcel","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"copyReqRespToExcel","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"ReadResPonseUpdateInputExcel","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"ReadResPonseUpdateInputExcel","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"getSoapResponseUpdateInputExcel","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getSoapResponseUpdateInputExcel","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"validateXMLNodeText","description":"Validates the ML Node value against the given value",
+"parameters":[{"locator":"File Path","value":"XML Path of the node to be validated Validation Value"}],
+"examples":[{"action":"validateXMLNodeText","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"generateEmptyRequest","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"generateEmptyRequest","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"AsyncRequest","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"AsyncRequest","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"getResponse","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getResponse","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"getSoapResponse","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getSoapResponse","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"setVariableInXML","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"setVariableInXML","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"validateResponse","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"validateResponse","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"UpdateExcel","description":"",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"UpdateExcel","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"getXMLNodeText","description":"Reads the given XML Node",
+"parameters":[{"locator":"File Path","value":"XML Path of the node to be read"}],
+"examples":[{"action":"getXMLNodeText","locator":"path","value":"node=//sessionId","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+}
+]

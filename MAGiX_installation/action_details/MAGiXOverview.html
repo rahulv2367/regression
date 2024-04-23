@@ -1,0 +1,170 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<link rel="icon" type="image/png" href="images/logo1.png">
+<title>MAGiX Overview</title>
+<link rel="stylesheet" href="css/w3schools27.css">
+<script src='jquery.min.js'></script>
+<script src='js/jquery-resizable.js'></script>
+<script>
+	$(document).ready(function() {
+		$('a').on('click', function(event) {
+			if (this.hash !== '') {
+				event.preventDefault();
+				var hash = this.hash;
+				$('.panel-right').animate({
+					scrollTop : $(hash).offset().top
+				}, 800, function() {
+					window.location.hash = hash;
+				});
+			}
+		});
+	});
+</script>
+<style>
+.panel-container {
+	display: flex;
+	flex-direction: row;
+	border: 1px solid silver;
+	overflow: hidden;
+	height: 620px;
+	xtouch-action: none;
+}
+
+.panel-left {
+	flex: 0 0 auto;
+	padding: 10px;
+	width: 200px;
+	min-height: 200px;
+	min-width: 150px;
+	height: 599px;
+	overflow-x: hidden;
+	white-space: nowrap;
+	background: lightgray;
+	color: white;
+}
+
+.splitter {
+	flex: 0 0 auto;
+	min-height: 200px;
+	cursor: col-resize;
+	background: #0099e5;
+	width: 5px;
+	cursor: col-resize;
+	transition: 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
+}
+
+.panel-right {
+	flex: 1 1 auto;
+	padding: 10px;
+	width: auto;
+	min-height: 200px;
+	min-width: 200px;
+	height: 599px;
+	background: #fff;
+	overflow-x: hidden;
+}
+
+.panel-center {
+	flex: 1 1 auto;
+	padding: 10px;
+	width: auto;
+	min-height: 200px;
+	min-width: 200px;
+	height: 599px;
+	background: #fff;
+	overflow-x: hidden;
+}
+
+.sidebar a:hover {
+	color: #e31837;
+}
+
+.imgcenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+</style>
+</head>
+<body>
+	<div class="w3-bar w3-card-2 notranslate"
+		style="position: relative; z-index: 4; font-size: 18px; background-color: #e31837; color: rgb(255, 255, 255); padding-left: 12px; padding-right: 16px; font-family: &amp; amp;">
+
+		<center>
+			<h2>MAGiX Header</h2>
+			<center>
+	</div>
+	<div class="w3-card-2 topnav notranslate" id="topnav"
+		style="position: relative;">
+		<div style="overflow: auto;">
+			<div class="w3-bar w3-left"
+				style="width: 100%; overflow: hidden; height: 44px">
+				<a class="w3-bar-item w3-button active" href="#"
+					title="MAGiX Overview">MAGiX Overview</a>
+
+
+
+				<!-- The active Tag would be specific to the file opened. We will have multiple files and we shall link them together.  -->
+				<a class="w3-bar-item w3-button" href="WebLibrary.html"
+					title="Web Keywords"
+					style="padding-left: 18px !important; padding-right: 18px !important;">WEB</a>
+
+
+
+
+				<a class="w3-bar-item w3-button" href="AppiumBaseLibrary.html"
+					title="Mobile Keywords">MOBILE</a> <a class="w3-bar-item w3-button"
+					href="RESTLibrary.html" title="REST Keywords">REST</a> <a
+					class="w3-bar-item w3-button" href="SoapWSLibrary.html"
+					title="SOAP Keywords">SOAP</a> <a class="w3-bar-item w3-button"
+					href="UFTDEV_WPFLibrary.html" title="LeanFT Keywords">LEANFT</a>
+			</div>
+		</div>
+	</div>
+	<div style='height: 5px;'></div>
+	<div class="panel-container">
+		<div class="panel-center">
+			<div style='background-color: black; height: auto; width: auto;'>
+				<img src="images/logo.png" class="imgcenter"
+					style='height: auto; width: auto; padding-top: 20px;'>
+			</div>
+			<div style='height: 5px;'></div>
+			<hr>
+			<center>
+				<h2>LitmusT Components and MAGiX</h2>
+				<center>
+					<img src="images/litmustMAGiX.png" class="imgcenter">
+					<div style='height: 5px;'></div>
+					<hr>
+					<center>
+						<h2>MAGiX - In a Nutshell</h2>
+						<center>
+							<img src="images/overview.png" class="imgcenter">
+							<div style='height: 5px;'></div>
+							<hr>
+							<center>
+								<h2>MAGiX Architecture</h2>
+								<center>
+									<img src="images/Architecture.png" class="imgcenter">
+									<div style='height: 5px;'></div>
+									<hr>
+									<center>
+										<h2>DevOps/CI-CD Readiness</h2>
+										<center>
+											<div style='height: 20px;'>
+												<img src="images/DevOpsIntegration.png" class="imgcenter">
+												<div style='height: 5px;'></div>
+												<hr>
+												<center>
+													<h2>MAGiX High Level Features</h2>
+													<center>
+														<img src="images/features.png" class="imgcenter">
+														<div style='height: 5px;'></div>
+														<hr>
+											</div>
+		</div>
+</body>
+<html>

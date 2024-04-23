@@ -1,0 +1,389 @@
+[
+{
+"action":"type","description":"To type the desired text in a specific element",
+"parameters":[{"locator":"locator to identify the element","value":"Text you want to type"}],
+"examples":[{"action":"type","locator":"id=username","value":"username@domain.com","comment":"Types username@domain.com in the inspected element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getValue","description":"Gets the value of the element from the specified element value attribute",
+"parameters":[{"locator":"locator to identify the element","value":"NA"}],
+"examples":[{"action":"getValue","locator":"id=username","value":"","comment":"Captures the value attribute of the element with id=username"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the value attribute of the element as a variable"}]
+},
+{
+"action":"sleep","description":"Pauses the execution for the given time. Specify the time in milliseconds",
+"parameters":[{"locator":"","value":"Time in milliseconds"}],
+"examples":[{"action":"sleep","locator":"","value":"2000","comment":"Pauses the execution for 2 seconds"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"isEnabled","description":"",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"chkEnabled","locator":"id=username","value":"","comment":"check if element with id=username is enabled or not"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getText","description":"Gets the text present in the specified element",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"getText","locator":"id=captureMe","value":"","comment":"Captures the text in element with id=CaptureMe"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the captured text into a variable"}]
+},
+{
+"action":"isSelected","description":"Indicates if the specified element is selected or not",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"isSelected","locator":"id=checkMe","value":"","comment":"Return the Element Status/flag in true if element is checked or false if element is unchecked"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the Status/flag i.e true or false into a variable"}]
+},
+{
+"action":"switchToWindowByTitle","description":"Switching to another Mobile browser window using its title",
+"parameters":[{"locator":"","value":"Title of the Mobile browser window you want to switch to"}],
+"examples":[{"action":"switchToWindowByTitle","locator":"","value":"HomePage","comment":"Switches to the Mobile browser window with Title as HomePage"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getCurrentWindowTitle","description":"Fetches the current Windows title of Mobile browser window",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"getCurrentWindowTitle","locator":"","value":"","comment":"Fetches the current Windows title of Mobile browser window"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Current Mobile browser window title is stored in the variable"}]
+},
+{
+"action":"switchToWindowByURL","description":"Switches to the Mobile Browser window using its URL",
+"parameters":[{"locator":"","value":"URL of the Mobile Browser window you want to switch to"}],
+"examples":[{"action":"switchToWindowByURL","locator":"","value":"http://www.google.com","comment":"Switches to the Mobile Browser window using its URL"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"assertTextNotPresent","description":"Asserts that the given text is not present in the specified element",
+"parameters":[{"locator":"locator to identify the element","value":"Text to be passed and asserted for not being present"}],
+"examples":[{"action":"assertTextNotPresent","locator":"id=username","value":"Text to be passed and asserted for not being present","comment":"Asserts that the given text is not present in the specified element"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"assertAttributeValue","description":"To assert a particular attribute of an element",
+"parameters":[{"locator":"Locator to identify the element","value":"Expected attribute name = Expected Attribute value"}],
+"examples":[{"action":"assertAttributeValue","locator":"id=username","value":"name=user_name","comment":"Checks if the name attribute of the element with id=username has user_name as the value"}],
+"dynamic":[{"name":"No dynamic variable are generated","description":""}]
+},
+{
+"action":"selectByVisibleText","description":"Selects the given value from the dropdown",
+"parameters":[{"locator":"Locator to identify the dropdown menu","value":"Value to be selected"}],
+"examples":[{"action":"selectByVisibleText","locator":"id=countries","value":"India","comment":"Selects If the text India is present from the dropdown list"}],
+"dynamic":[{"name":"No dynamic variable are generated","description":""}]
+},
+{
+"action":"scroll","description":"scroll the screen based on the direction",
+"parameters":[{"locator":"","value":"up/down/right/left"}],
+"examples":[{"action":"scroll","locator":"","value":"up/down/right/left","comment":"Direction up/down/right/left need to be passed as a value"}],
+"dynamic":[{"name":"No dynamic variable are generated","description":""}]
+},
+{
+"action":"assertElementPresent","description":"Asserts the presence of the element. Fails the test case if the element is not found",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"assertElementPresent","locator":"id=username","value":"","comment":"Asserts whether the element is present or not"}],
+"dynamic":[{"name":"No dynamic variable are generated","description":""}]
+},
+{
+"action":"switchToWindow","description":"Switch to another Mobile Browser window using the window handler",
+"parameters":[{"locator":"","value":"Window handler"}],
+"examples":[{"action":"switchToWindow","locator":"","value":"Window_Help","comment":"Switches to another Mobile Browser window with handler mentioned."}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"switchToFrame","description":"Switching to a frame to access the elements inside the frame of Mobile Browser",
+"parameters":[{"locator":"Locator to identify the frame","value":""}],
+"examples":[{"action":"switchToFrame","locator":"id=frame1","value":"","comment":"Switches to the frame with id=frame1"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"clearAndType","description":"Clears the Text box and types the desired value",
+"parameters":[{"locator":"Locator to identify the textbox","value":"Text you want to type"}],
+"examples":[{"action":"clearAndType","locator":"id=username","value":"hello","comment":"Clears the existing text in textbox with id=username and enters hello"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getScreenshot","description":"Takes the screenshot of the Current Screen/Window",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getScreenshot","locator":"","value":"","comment":"Takes the screenshot"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"dragAndDrop","description":"To drag some element from one location to another",
+"parameters":[{"locator":"locator to identify the source element","value":"locator to identify the destination element"}],
+"examples":[{"action":"dragAndDrop","locator":"xpath=//div/span","value":"//div","comment":"Moves the element from source to destination"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"scrollToExactText","description":"scroll to exact on text",
+"parameters":[{"locator":"","value":"Text to be passed"}],
+"examples":[{"action":"scrollToExactText","locator":"","value":"Text to be passed","comment":"scroll to exact on text in the page"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"assertPartialText","description":"Asserts if the element specified contains the given text",
+"parameters":[{"locator":"locator to identify the element","value":"Text to be asserted"}],
+"examples":[{"action":"assertPartialText","locator":"id=username","value":"hello","comment":"Asserts if the element id=username contains the given text hello"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"tapAtCoOrdinates_js","description":"tap at the co-ordinates of the element(Using java script)",
+"parameters":[{"locator":"locator to identify the element","value":"co-ordinate1&co-ordinate2 of the page"}],
+"examples":[{"action":"tapAtCoOrdinates_js","locator":"id=username","value":"400&1234","comment":"tap at the co-ordinates of the element(Using java script)"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"switchToNativeContext","description":"To Switch back to Native app context from WebView context",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"switchToNativeContext","locator":"","value":"","comment":"To Switch back to Native app context from WebView context"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getNumberOfContexts","description":"To get number of contexts for an Mobile Application",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"getNumberOfContexts","locator":"","value":"","comment":"To get number of contexts for an Mobile Application"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"switchToLastContext","description":"To switch to last Webview context",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"switchToLastContext","locator":"","value":"","comment":"To switch to last Webview context"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"switchToWebChildWindow","description":"To switch to latest child window in WEBVIEW",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"switchToWebChildWindow","locator":"","value":"","comment":"To switch to latest child window in WEBVIEW"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"switchToWebParentWindow","description":"To switch to parent window in WEBVIEW",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"switchToWebParentWindow","locator":"","value":"","comment":"To switch to parent window in WEBVIEW"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"waitForElementToDisplay","description":"Wait for element to display for a certain period of time",
+"parameters":[{"locator":"locator to identify the element","value":"Time in Seconds"}],
+"examples":[{"action":"waitForElementToDisplay","locator":"id=submit","value":"3","comment":"Wait for element id=submit to display for a certain period of time in 3 seconds"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"waitForElementToClickable","description":"Wait for element to clickable for a certain period of time.",
+"parameters":[{"locator":"locator to identify the element","value":"Time in Seconds"}],
+"examples":[{"action":"waitForElementToClickable","locator":"id=submit","value":"3","comment":"Wait for element id=submit to be clickable for a certain period of time in 3 seconds"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"selectDropdownValue","description":"selects the given option in the dropdown",
+"parameters":[{"locator":"locator to identify the element","value":"Option to be selected"}],
+"examples":[{"action":"selectDropdownValue","locator":"id=countries","value":"India","comment":"selects the option India from the dropdown id=countries"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"convertToTitleCase","description":"Converts the given string to title case",
+"parameters":[{"locator":"","value":"String to be converted to title case"}],
+"examples":[{"action":"convertToTitleCase","locator":"","value":"tech mahindra","comment":"Converts the string iaf to title case Tech Mahindra"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the converted TitleCase text into a variable"}]
+},
+{
+"action":"getNumberOfElements","description":"Fetches the numbers of elements of an Element",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"getNumberOfElements","locator":"id=countries","value":"","comment":"Fetches the numbers of elements of id=countries element"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the element size into a variable"}]
+},
+{
+"action":"assertElementsSorted","description":"To sort text of an Element in ascending or descending order",
+"parameters":[{"locator":"locator to identify the element","value":"ascending/descending"}],
+"examples":[{"action":"assertElementsSorted","locator":"id=countries","value":"ascending/descending","comment":"sort the country names either in ascending/descending order"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"AssertDropdownValues","description":"Asserts the dropdown values of Select element by text/value",
+"parameters":[{"locator":"locator to identify the element","value":"ByText:/value"}],
+"examples":[{"action":"AssertDropdownValues","locator":"id=countires","value":"ByText&India&SriLanka&Malaysia","comment":"Asserts the values of Select Element id=countires ByText:/value"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getWindowHandleNames","description":"Gets Mobile Browser window Handle names",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"getWindowHandleNames","locator":"","value":"","comment":"Gets Mobile Browser window Handle names"}],
+"dynamic":[{"name":"{V_Sr.No_0},{V_Sr.No_1},...","description":"Stores the window handle names into a variable"}]
+},
+{
+"action":"getWindowHandleURL","description":"Gets each Mobile Browser Window Handle URL",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"getWindowHandleURL","locator":"","value":"","comment":"Gets each Mobile Browser Window Handle URL and store into the variable"}],
+"dynamic":[{"name":"{V_Sr.No_0},{V_Sr.No_1},...","description":"Stores the each window handle URL into a variable"}]
+},
+{
+"action":"assertTextPresent","description":"Asserts whether the desired text is present at the element or not",
+"parameters":[{"locator":"Locator to identify the element","value":"Text to be asserted"}],
+"examples":[{"action":"assertTextPresent","locator":"id=username","value":"hello","comment":"Check if hello is present in element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"compareTextwithDropDownValues","description":"compares the text/value from  the list of a drop down values",
+"examples":[{"action":"AssertDropdownValues","locator":"id=countires","value":"text/value to be passed"}, {"action":"compareTextwithDropDownValues","locator":"id=countires","value":"India","comment":"Check if the text India is present from the drop down id=countires element"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false"}]
+},
+{
+"action":"compareAllDropDownValues","description":"compares all the drop down values ",
+"parameters":[{"locator":"Locator to identify the element","value":"Value/Text to be passed separated by &"}],
+"examples":[{"action":"compareAllDropDownValues","locator":"id=countries","value":"India&Nepal&SriLanka","comment":"compares the text India,Nepal and SriLanka in the drop down values of id=countries"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getSelectedDropDownValue","description":"Fetches the first selection option from the drop down list",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"getSelectedDropDownValue","locator":"id=countries","value":"","comment":"Fetches the first selection option from the drop down id=countries"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the selected option into a variable"}]
+},
+{
+"action":"AssertselectedDropDownValue","description":"Assert text/value from the DropDown Values",
+"parameters":[{"locator":"Locator to identify the element","value":"text to be passed"}],
+"examples":[{"action":"AssertselectedDropDownValue","locator":"id=countries","value":"India","comment":"Assert name India from the values of DropDown id=countries"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getWindowHandlesNumber","description":"Fetches the total number of Mobile browser windows open",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getWindowHandlesNumber","locator":"","value":"","comment":"fetches the total number of Mobile Browser windows open"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Total Number of Mobile Browser windows open"}]
+},
+{
+"action":"assertCheckboxStatus","description":"Asserts the Check box status as checked or Unchecked",
+"parameters":[{"locator":"Locator to identify the element","value":"value to be passed for assertion"}],
+"examples":[{"action":"assertCheckboxStatus","locator":"id=Gender","value":"checked/unchecked","comment":"Asserts the check box is checked or unchecked for element id=Gender"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"isDisplayed","description":"Indicates if the specified element is displayed or not",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"isDisplayed","locator":"id=submit","value":"","comment":"Indicates if the element id=submit is displayed or not"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"openDevice","description":"Launches the given Android/iOS Mobile device and the specified app",
+"parameters":[{"locator":"Mobile Device Configuration Details separated by & delimeter","value":"Device Name"}],
+"examples":[{"action":"openDevice","locator":"Appium server Host Url&BrowserName/Appium Host Url&Mobile App Directory path&Mobile App Name&Mobile App package Name","value":"Lenovo K4","comment":"Launches the Real Mobile Device with either Browser or Mobile Application  with the provided configuration details"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"tap","description":"Taps on the specified element",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"tap","locator":"id=login","value":"","comment":"Taps on the element id=login"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"tapAndType","description":"Taps the specified element and types the given text",
+"parameters":[{"locator":"Locator to identify the element","value":"Text to be passed"}],
+"examples":[{"action":"tapAndType","locator":"id=username","value":"username","comment":"Taps on the element id=username and types username text in the element"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"closeApp","description":"Closes the Mobile Application which is currently opened",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"closeApp","locator":"","value":"","comment":"Closes the Mobile Application which is currently opened"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"quitDevice","description":"Close the current Appium Server instance session",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"quitDevice","locator":"","value":"","comment":"Closes the current Appium Server driver session"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"closeDevice","description":"Close the current Appium Server instance Connection",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"closeDevice","locator":"","value":"","comment":"Close the current Appium Server instance Connection"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"tapBackButton","description":"Taps on the back button on Mobile Device to navigate back",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"tapBackButton","locator":"","value":"","comment":"Taps on the back button on Mobile Device to navigate back"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"tapAtCoOrdinates","description":"tap at the co-ordinates of the element",
+"parameters":[{"locator":"locator to identify the element","value":"co-ordinate1&co-ordinate2 of the page"}],
+"examples":[{"action":"tapAtCoOrdinates","locator":"id=username","value":"400&1234","comment":"tap at the co-ordinates of the element"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"closeKeyboard","description":"Close the Visible keyboard on Mobile Window",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"closeKeyboard","locator":"","value":"","comment":"Close the Visible keyboard on Mobile Window"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getContexts","description":"Gets the Context names for an Mobile Application",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"getContexts","locator":"","value":"","comment":"Gets the Context names for an Mobile Application"}],
+"dynamic":[{"name":"{V_Sr.No_0},{V_Sr.No_1},...","description":"Stores the each Mobile Context name into a variable"}]
+},
+{
+"action":"switchContext","description":"Switches the Context from NATIVE_APP to Webview and vice versa",
+"parameters":[{"locator":"","value":"Context name to be passed"}],
+"examples":[{"action":"switchContext","locator":"","value":"Webivew_1","comment":"Switches the Context from NATIVE_APP to Webview_1"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"doubleTap","description":"Taps the specified element twice",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"doubleTap","locator":"id=productinfo","value":"","comment":"Taps twice on the element id=productinfo"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"swipe","description":"Perform Swipe on the Mobile Screen",
+"parameters":[{"locator":"","value":"source element-X axis&source element-Y axis&Destination element-X axis&Destination element-Y axis"}],
+"examples":[{"action":"swipe","locator":"","value":"40&50&1110&1200","comment":"Perform Swipe on the Mobile Screen based on the co-ordinates of source and destination"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"loadURL","description":"To load url in Mobile browsers",
+"parameters":[{"locator":"","value":"pass URL of a webpage"}],
+"examples":[{"action":"loadURL","locator":"","value":"https://wwww.google.com","comment":"Loads https://wwww.google.com on Mobile Browser"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setExperitestLoginDetails","description":"Provide URL and access key for Experitest - separated by &",
+"parameters":[{"locator":"","value":"pass the URL and access key for Experitest - separated by &"}],
+"examples":[{"action":"setExperitestLoginDetails","locator":"","value":"https://rbc.experitest.com/wd/hub&hsfhsjdifufs%&*%684940tjfkdg","comment":"set access key for Experitest"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+
+{
+"action":"setExperitestDeviceDetails","description":"set Experitest device details for the test ",
+"parameters":[{"locator":"","value":"deviceType&platform&deviceSerialNo"}],
+"examples":[{"action":"setExperitestDeviceDetails","locator":"","value":"PHONE&ios&hhadjf890njkfmlds","comment":"set Experitest device details for the test"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+
+{
+"action":"setExperitestAppDetails","description":"set app details on Experitest device for the test ",
+"parameters":[{"locator":"","value":"appPackage&appActivity"}],
+"examples":[{"action":"setExperitestAppDetails","locator":"","value":"com.experitest.ExperiBank&.LoginActivity","comment":"set app details on Experitest device for the test"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+
+{
+"action":"openExperitestDevice","description":"Open experitest device and launch app",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"openExperitestDevice","locator":"","value":"","comment":"Open experitest device and launch app"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+
+{
+"action":"openExperitestDevice_Browser","description":"Open experitest device, launch browser and load the URL",
+"parameters":[{"locator":"browser","value":"URL"}],
+"examples":[{"action":"openExperitestDevice_Browser","locator":"chrome","value":"https://www.google.com/","comment":"Open experitest device, launch browser and load the URL"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setAllCheckboxes","description":"check or uncheck all the check boxes in a page",
+"parameters":[{"locator":"locator to identify the element ex:id/name/xpath/cssselector","value":"checked/unchecked"}],
+"examples":[{"action":"setAllCheckboxes","locator":"id=details","value":"checked/unchecked","comment":"checks or uncheck the check box present in the page"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+}
+]

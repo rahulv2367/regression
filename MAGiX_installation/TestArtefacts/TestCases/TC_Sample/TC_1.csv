@@ -1,0 +1,8 @@
+"","setTags","","Smoke","",""
+"Browser","LoadSingleTestData","TC_1_TestData.TestData_TC_1","browser","","Lodding single test data for browser"
+"URL","LoadSingleTestData","TC_1_TestData.TestData_TC_1","url","","Lodding single test data for URL"
+"","open","{V_Browser_TC1Data}","{V_URL_TC1Data}","","Opening Browser and entering URL "
+"","sleep","","2000","","Wait time"
+"Data","LoadSingleTestData","TC_1_TestData.TestData_TC_1","googleSearchData","","Lodding single test data for entering text in Google"
+"","type","${TC_1_OR\OR_TC_1.searchBox}","{V_Data_TC1Data}","","Typing text in search field"
+"","closeBrowser","","","",""

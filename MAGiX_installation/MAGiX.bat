@@ -1,0 +1,1 @@
+java --module-path "D:\JavaFx_17\javafx-sdk-17.0.2\lib" --add-modules=javafx.fxml,javafx.web -jar MAGiX.jar

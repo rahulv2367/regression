@@ -1,0 +1,1295 @@
+[
+{
+"action":"IF","description":"To execute set of actions depending on the condition specified. If the condition is met, the IF block gets executed. For every IF block, there should be a correspnding END_IF.",
+"parameters":[{"locator":"","value":"Condition"}],
+"examples":[{"action":"IF","locator":"","value":"a==1","comment":"The IF block will execute if a is equal to 1"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"ELSE","description":"Executes set of actions if the condition specified under IF fails",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"ELSE","locator":"","value":"","comment":"Will execute if the condition mentioned under IF fails."}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"END_IF","description":"End of IF Structure. Every IF should have a corresponding END_IF.",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"END_IF","locator":"","value":"","comment":"End of IF Structure"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"WHILE","description":"To execute set of actions in repeat-mode until the condition mentioned fails. Each WHILE should have a corresponding END WHILE.",
+"parameters":[{"locator":"","value":"Condition"}],
+"examples":[{"action":"WHILE","locator":"","value":"a==1","comment":"The loop runs as long as a is equal to 1"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"END WHILE","description":"End of WHILE looping structure",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"END WHILE","locator":"","value":"","comment":"End of WHILE"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"callFunction","description":"Calling a Reusable block of actions",
+"parameters":[{"locator":"path of the reusable block","value":"NA"}],
+"examples":[{"action":"callFunction","locator":"reusable.login","value":"","comment":"This executes the steps under sheet: login in workbook: reusable"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"LoadSingleTestData","description":"To load single rows data from a data sheet using the uniqueID",
+"parameters":[{"locator":"path to the data sheet","value":"UniqueID of the row"}],
+"examples":[{"action":"LoadSingleTestData","locator":"TestData.TestSheet","value":"1","comment":"Loads the data for the row with uniqueID = 1 from the TestSheet from TestData workbook"}],
+"dynamic":[{"name":"{V_Sr.No_ColumnName}","description":"For each cell in the selected row, a variable is created with the combination of Sr.No and Column Name"}]
+},
+{
+"action":"ExecuteTC_MultipleTestData","description":"To load multiple rows data from a data sheet for a specific reusable block",
+"parameters":[{"locator":"path to the data sheet","value":"Reusable block to be used"}],
+"examples":[{"action":"ExecuteTC_MultipleTestData","locator":"TestData.TestSheet","value":"Reusable.Login","comment":"Loads the data and runs it on the reusable block"}],
+"dynamic":[{"name":"{V_Sr.No_ColumnName}","description":"For each cell in the selected row, a variable is created with the combination of Sr.No and Column Name"}]
+},
+{
+"action":"ExecuteTC_MultipleTestDataExcel","description":"To load multiple rows data from a Excel data sheet for a specific reusable block",
+"parameters":[{"locator":"path to the data sheet","value":"Reusable block to be used"}],
+"examples":[{"action":"ExecuteTC_MultipleTestDataExcel","locator":"TestData.TestSheet","value":"Reusable.Login","comment":"Loads the data from an excel sheet and runs it on the reusable block"}],
+"dynamic":[{"name":"{V_Sr.No_ColumnName}","description":"For each cell in the selected row, a variable is created with the combination of Sr.No and Column Name"}]
+}
+,
+{
+"action":"type","description":"To type the desired text in a specific textbox",
+"parameters":[{"locator":"locator to identify the textbox","value":"Text you want to type"}],
+"examples":[{"action":"type","locator":"id=username","value":"hello","comment":"Types hello in the textbox with id=username"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The text typed would be stored in this variable"}]
+},
+{
+"action":"clear","description":"Clears the existing value of the element",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"clear","locator":"id=username","value":"","comment":"Clears the existing value of the textbox with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getValue","description":"Gets the value stored in value attribute",
+"parameters":[{"locator":"locator to identify the element","value":"NA"}],
+"examples":[{"action":"getValue","locator":"id=username","value":"","comment":"Captures the value attribute of the element with id=username"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the value attribute of the element as a variable"}]
+},
+{
+"action":"waitForElementInvisible","description":"Waits for the element to be invisible. Useful for loading images",
+"parameters":[{"locator":"locator to identify the element","value":"Time in Seconds"}],
+"examples":[{"action":"waitForElementInvisible","locator":"id=loading","value":"10","comment":"Waits for the element to be invisible"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"toUpperCase","description":"Converts the given text into upper case",
+"parameters":[{"locator":"","value":"text to be converted to upper case"}],
+"examples":[{"action":"toUpperCase","locator":"","value":"hello","comment":"hello will be converted to HELLO"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The same text in upper case"}]
+},
+{
+"action":"sleep","description":"Pauses the execution for the given time. Specify the time in milliseconds",
+"parameters":[{"locator":"","value":"Time in milli seconds"}],
+"examples":[{"action":"sleep","locator":"","value":"2000","comment":"Pauses the execution for 2 seconds"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"checkURL","description":"To check if the URL mentioned matches the actual URL",
+"parameters":[{"locator":"","value":"The URL you want to verify"}],
+"examples":[{"action":"checkURL","locator":"","value":"http://www.google.com","comment":"Verifies whether the actual URL is http://www.google.com"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"open","description":"Opens the specified URL in the mentioned browser",
+"parameters":[{"locator":"name of the browser. Eg- chrome, firefox, ie","value":"URL you wish to launch"}],
+"examples":[{"action":"open","locator":"chrome","value":"http://www.google.com","comment":"Opens http://www.google.com in chrome browser"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"executeSeleniumGrid","description":"Opens the specified URL on the mentioned node",
+"parameters":[{"locator":"name of the browser. Eg- chrome, firefox, ie","value":"URL you wish to launch"}],
+"examples":[{"action":"executeSeleniumGrid","locator":"chrome","value":"http://www.google.com","comment":"Opens http://www.google.com in chrome browser"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"executeSeleniumGrid","description":"Opens the specified URL in the mentioned browser on selenium grid",
+"parameters":[{"locator":"name of the browser. Eg- chrome, firefox, ie","value":"URL you wish to launch"}],
+"examples":[{"action":"executeSeleniumGrid","locator":"chrome","value":"http://www.google.com","comment":"Opens http://www.google.com in chrome browser"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setDate","description":"Sets the given date in the specified element. This is used when selecting date from Calendar is difficult.",
+"parameters":[{"locator":"locator to identify the element","value":"Date you want to enter"}],
+"examples":[{"action":"setDate","locator":"id=calendar","value":"01/01/2018","comment":"Sets the date to 01/01/2018 in the calendar with id=calendar"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getAttribute","description":"Fetches the given attributes value for the element specified",
+"parameters":[{"locator":"locator to identify the element","value":"attribute whos value is desired"}],
+"examples":[{"action":"getAttribute","locator":"id=username","value":"name","comment":"Will fetch the value of name attribute for the element with id=username"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the value of the said attribute as a variable"}]
+},
+{
+"action":"getText","description":"Fetches the text captured at the said element",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"getText","locator":"id=captureMe","value":"","comment":"Captures the text in element with id=CaptureMe"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the text captured at the said element as a variable"}]
+},
+{
+"action":"selectByValue","description":"Selects the desired value in the dropdown",
+"parameters":[{"locator":"locator to identify the dropdown menu","value":"Desired Value to be selected"}],
+"examples":[{"action":"selectByValue","locator":"id=dropdown","value":"hello","comment":"Selects the option with Value: hello in the dropdown with id=dropdown"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the option selected as a variable"}]
+},
+{
+"action":"getSystemDate","description":"Gets the system date in the format specified",
+"parameters":[{"locator":"","value":"format in which you want the date displayed"}],
+"examples":[{"action":"getSystemDate","locator":"","value":"dd/MM/YYYY","comment":"Shows the date in dd/MM/YYYY format"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Date in specified format"}]
+},
+{
+"action":"var","description":"Creates a new string/integer variable. For string parameters, give the value in double quotes",
+"parameters":[{"locator":"name of the variable","value":"value of the variable. For strings, specify in double quotes"}],
+"examples":[{"action":"var","locator":"a","value":"1","comment":"a=1 is created. If you want variable a to be a string type, pass the value in double quotes"}],
+"dynamic":[{"name":"{variableName}","description":"Stores the variable in the variable"}]
+},
+{
+"action":"navigate","description":"To navigate to a specific page",
+"parameters":[{"locator":"","value":"URL of the desired page"}],
+"examples":[{"action":"navigate","locator":"","value":"http://www.google.com","comment":"Navigates to http://www.google.com"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"scrollIntoView","description":"Scrolls the web page to get the specific element into view",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"scrollIntoView","locator":"id=username","value":"","comment":"Brings the element with id=username into view"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"assertTableData","description":"To check if a specific value is in a specific column of a table",
+"parameters":[{"locator":"Locator to identify the table","value":"ColumnName&ValueToCheck"}],
+"examples":[{"action":"assertTableData","locator":"id=table","value":"FirstName&Darwin","comment":"Checks if Darwin is present in the column by the name FirstName in the table with id=table"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"rightClick","description":"Performing right click on the specified element",
+"parameters":[{"locator":"locator to identify the element","value":"NA"}],
+"examples":[{"action":"rightClick","locator":"id=username","value":"","comment":"Performs right-click on the element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"switchToWindow","description":"Switch to another window using the window handler",
+"parameters":[{"locator":"","value":"Window handler"}],
+"examples":[{"action":"switchToWindow","locator":"","value":"ABSY73YFDH32S","comment":"Siwtches to another window with handler mentioned."}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getCurrentUrl","description":"Gets the current URL",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getCurrentUrl","locator":"","value":"","comment":"Gets the current URL"}],
+"dynamic":[{"name":"{V_Sr.No}","description":""}]
+},
+{
+"action":"setTimeOut","description":"Sets the time out for the execution. Mention the value in seconds",
+"parameters":[{"locator":"","value":"Time out in Seconds"}],
+"examples":[{"action":"setTimeOut","locator":"","value":"10","comment":"Sets the timeout to 10 seconds"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"isAlertPresent","description":"check whether the alert pop-up is present or not and returns the boolean variable true/false",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"isAlertPresent","locator":"","value":"","comment":"check whether the alert pop-up is present or not and returns the boolean variable true/false"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Boolean variable true/false will be printed "}]
+},
+{
+"action":"alertAccept","description":"Accepts the alert pop-up",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"alertAccept","locator":"","value":"","comment":"Accepts the alert pop-up"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"alertDismiss","description":"Dismisses the alert pop-up",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"alertDismiss","locator":"","value":"","comment":"Dismisses the alert pop-up"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"exeJavaScript","description":"Executes the given javascript code",
+"parameters":[{"locator":"","value":"Javascript code"}],
+"examples":[{"action":"exeJavaScript","locator":"","value":"alert(123);","comment":"Executes the given Javascript code"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"doubleClick","description":"Double click on the desired element",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"doubleClick","locator":"id=username","value":"","comment":"double clicks on the element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"doubleClick_JS","description":"Double click on the desired element. Uses Javascript to perform double click",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"doubleClick_JS","locator":"id=username","value":"","comment":"double clicks on the element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setIEServer","description":"Sets the IE driver path",
+"parameters":[{"locator":"","value":"path to IEDriverServer.exe"}],
+"examples":[{"action":"setIEServer","locator":"","value":"D:/IEDriverServer.exe","comment":"Sets the IE Driver path"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setChromeServer","description":"Sets the Chrome Driver path",
+"parameters":[{"locator":"","value":"path to chromedriver.exe"}],
+"examples":[{"action":"setChromeServer","locator":"","value":"D:/chromedriver.exe","comment":"Sets the chromedriver path"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setFirefoxBinary","description":"Sets the path for firefox.exe",
+"parameters":[{"locator":"","value":"Path to firefox.exe"}],
+"examples":[{"action":"setFirefoxBinary","locator":"","value":"C:/Firefox.exe","comment":"Sets the path to firefox.exe"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setChromeBinary","description":"Sets the path for chrome.exe",
+"parameters":[{"locator":"","value":"Path to firefox.exe"}],
+"examples":[{"action":"setChromeBinary","locator":"","value":"C:/chrome.exe","comment":"Sets the path to chrome.exe"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"switchToFrame","description":"Switching to a frame to access the elements inside the frame",
+"parameters":[{"locator":"Locator to identify the frame","value":""}],
+"examples":[{"action":"switchToFrame","locator":"id=frame1","value":"","comment":"Switches to the frame with id=frame1"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"switchToFrameByIndex","description":"Switching to a frame using the index",
+"parameters":[{"locator":"","value":"frame number"}],
+"examples":[{"action":"switchToFrameByIndex","locator":"","value":"0","comment":"Switches to the frame with index 0"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"clickInAnyFrame","description":"Click on an element in a frame if identifying the frame is difficult",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"clickInAnyFrame","locator":"id=username","value":"","comment":"Clicks on the element with id=username which is in the frame"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"click","description":"Click on a specified element",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"click","locator":"id=username","value":"","comment":"Clicks on the element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"typeInAnyFrame","description":"Type in a text box which is in a frame. Use this when identifying the frame is difficult",
+"parameters":[{"locator":"Locator to identify the textbox","value":"Value you wish to type"}],
+"examples":[{"action":"typeInAnyFrame","locator":"id=username","value":"hello","comment":"Enters hello in the textbox with id=username which is in the frame"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The text you wish to type"}]
+},
+{
+"action":"typeInAnyIFrame","description":"Types the desired text in a specific element which is present in any iFrame",
+"parameters":[{"locator":"Locator to identify the textbox","value":"Text you would like to enter"}],
+"examples":[{"action":"typeInAnyIFrame","locator":"id=firstname","value":"iAF","comment":"Types iAF in the element with id=firstname"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The text you wish to type"}]
+},
+{
+"action":"isTextPresent","description":"To check the presence of text in the page",
+"parameters":[{"locator":"","value":"text you would like to search"}],
+"examples":[{"action":"isTextPresent","locator":"","value":"hello","comment":"Searches for hello in the page"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Set the value to true/false"}]
+},
+{
+"action":"waitForPageLoad","description":"Waits for the page to load for a specified time in seconds",
+"parameters":[{"locator":"","value":"Time in seconds"}],
+"examples":[{"action":"waitForPageLoad","locator":"","value":"10","comment":"Waits for 10 seconds to load the page"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"clearAndType","description":"Clears the Text box and types the desired value",
+"parameters":[{"locator":"Locator to identify the textbox","value":"Text you want to type"}],
+"examples":[{"action":"clearAndType","locator":"id=username","value":"hello","comment":"Clears the existing text in textbox with id=username and enters hello"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"mouseHover","description":"Hovers on the element specified",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"mouseHover","locator":"id=username","value":"","comment":"Hovers on the element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"closeBrowser","description":"Closes the current window",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"closeBrowser","locator":"","value":"","comment":"Closes the current window"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"quitBrowser","description":"Closes all the open windows",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"quitBrowser","locator":"","value":"","comment":"Closes all the open windows"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"windowMaximize","description":"To maximize the window. Does not work on Safari and chrome.",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"windowMaximize","locator":"","value":"","comment":"Maximizes the window"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"selectByIndex","description":"Select the desired value in a dropdown menu using the index",
+"parameters":[{"locator":"Locator to identify the dropdown menu","value":"Index of the option you wish to select"}],
+"examples":[{"action":"selectByIndex","locator":"id=month","value":"0","comment":"Selects the first month in the list of options specified."}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The selected option would be stored in the dynamic variable"}]
+},
+{
+"action":"robotPoweredMoveMouseToCoordinatesOnPage","description":"To move the mouse pointer to a specific point in the page. Use when offset is present.",
+"parameters":[{"locator":"X-coordinate in pixels","value":"Y-Coordinate in pixels"}],
+"examples":[{"action":"robotPoweredMoveMouseToCoordinatesOnPage","locator":"100","value":"100","comment":"Will move to (100,100) position in the page"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"robotPoweredMoveMouseToAbsoluteCoordinates","description":"To move the mouse pointer to a specific point in the page",
+"parameters":[{"locator":"X-Coordinate in pixels","value":"Y-Coordinate in pixels"}],
+"examples":[{"action":"robotPoweredMoveMouseToAbsoluteCoordinates","locator":"100","value":"100","comment":"Will move to (100,100) position in the page"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"type_js","description":"Enter the desired text in the textbox. Use this if the locator is id/name",
+"parameters":[{"locator":"Locator to identify the textbox","value":"Text you wish to type"}],
+"examples":[{"action":"type_js","locator":"id=username","value":"hello","comment":"Types hello in the textbox with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"executeBatch","description":"Executes the specified batch file",
+"parameters":[{"locator":"","value":"Path to the batch file"}],
+"examples":[{"action":"executeBatch","locator":"","value":"D:/runThis.bat","comment":"Executes the specified batch file"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"openDatabase","description":"To connect to a database. Use #&# to seperate values for generic one and use ### for windows authentication",
+"parameters":[{"locator":"","value":"ConnectionString&username&password&driver"}],
+"examples":[{"action":"openDatabase","locator":"","value":"jdbc:mysql://localhost:3306/login&root&root&com.mysql.jdbc.Driver","comment":"Connects to the login database"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"DBdelete","description":"To execute a delete query",
+"parameters":[{"locator":"","value":"Delete Query"}],
+"examples":[{"action":"DBdelete","locator":"","value":"Delete from credentials ...","comment":"Deletes the data matching the condition"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"DBinsert","description":"To execute an insert Query",
+"parameters":[{"locator":"","value":"Insert Query"}],
+"examples":[{"action":"DBinsert","locator":"","value":"insert into credentials ...","comment":"Inserts the data to the table"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"DBupdate","description":"To execute an update query",
+"parameters":[{"locator":"","value":"Update Query"}],
+"examples":[{"action":"DBupdate","locator":"","value":"Update table credentials ...","comment":"Updates the table"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"writeIntoFile","description":"Store some text to a .txt file",
+"parameters":[{"locator":"","value":"DesiredText&Path of the text file"}],
+"examples":[{"action":"writeIntoFile","locator":"","value":"iAF&D:/iaf.txt","comment":"Stores the text iAF in the file"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"updateCSVFile","description":"updates the data to the csv file",
+"parameters":[{"locator":"","value":"DesiredText&Path of the text file"}],
+"examples":[{"action":"updateCSVFile","locator":"iAF","value":"D:/iaf.csv","comment":"Stores the text iAF in the csv file"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"readFromFile","description":"Reads the data from a .txt file",
+"parameters":[{"locator":"","value":"Path of the text file"}],
+"examples":[{"action":"readFromFile","locator":"","value":"D:/iaf.txt","comment":"Reads the data from a .txt file"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stored the text read from the text file as a variable"}]
+},
+{
+"action":"zoomIn","description":"Reads the data from a .txt file",
+"parameters":[{"locator":"","value":"Path of the text file"}],
+"examples":[{"action":"zoomIn","locator":"abcd","value":"3","comment":"ZoomIN"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+}
+,
+{
+"action":"closeDatabase","description":"Closes the already opened Database connection",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"closeDatabase","locator":"","value":"","comment":"Closes the DB Connection"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"click_focus","description":"Clicking on a specific element",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"click_focus","locator":"id=username","value":"","comment":"clicks on the element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"type_focus","description":"Entering desired text in a specific textbox",
+"parameters":[{"locator":"Locator to identify the textbox","value":"Text to be entered"}],
+"examples":[{"action":"type_focus","locator":"id=username","value":"hello","comment":"Enters hello in the textbox with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"typeAndEnter","description":"Types the desired text in the element specified",
+"parameters":[{"locator":"Locator to identify the textbox","value":"Text you wish to enter"}],
+"examples":[{"action":"typeAndEnter","locator":"id=username","value":"iAF","comment":"Enters iAF into the text box with id=username"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stored the text typed as a variable"}]
+},
+{
+"action":"waitForText","description":"Waits for the desired text for a certain time. Mention time in seconds",
+"parameters":[{"locator":"Locator to identify the text","value":"DesiredText&TimeOut&TimeSlot"}],
+"examples":[{"action":"waitForText","locator":"id=username","value":"hello&60&5","comment":"Will check for maximum 12 times for hello to be present at the element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"addMinsToSysDate","description":"Adds specified number of mins to the system date",
+"parameters":[{"locator":"","value":"Number of minutes"}],
+"examples":[{"action":"addMinsToSysDate","locator":"","value":"10","comment":"Adds 10 mins to the system date"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the time in MMM dd, yyyy, HH:mm format"}]
+},
+{
+"action":"throwError","description":"Throws an error and fails the test case",
+"parameters":[{"locator":"","value":"Error message"}],
+"examples":[{"action":"throwError","locator":"","value":"Failing TC...","comment":"Fails the step and TC with the given message"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"checkTextPresent","description":"Checks if the expected text matches with the text on the screen",
+"parameters":[{"locator":"locator to identify the element","value":"Expected Text"}],
+"examples":[{"action":"checkTextPresent","locator":"id=username","value":"hello","comment":"Checks if hello if present in element with id=username"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable value to true/false depending on the result"}]
+},
+{
+"action":"dragAndDrop","description":"To drag some element from one location to another",
+"parameters":[{"locator":"locator to identfy the source element","value":"locator to identify the destination element"}],
+"examples":[{"action":"dragAndDrop","locator":"xpath=//div/span","value":"//div","comment":"Moves the element from source to destination"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"pageRefresh","description":"To refresh the current page",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"pageRefresh","locator":"","value":"","comment":"Refreshes the current page"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"stringCompare","description":"Compares 2 strings and tells us if they are same or not",
+"parameters":[{"locator":"Original String","value":"Search String"}],
+"examples":[{"action":"stringCompare","locator":"automation","value":"automation","comment":"Checks if the 2 strings are same or not"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false according to the result of the comparison"}]
+},
+{
+"action":"stringContains","description":"Compares 2 strings and tells us if one if substring of another",
+"parameters":[{"locator":"Original String","value":"Search String"}],
+"examples":[{"action":"stringContains","locator":"automationDemo","value":"automation","comment":"Checks if the searchString is a substring of original string"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false according to the result of the comparison"}]
+},
+{
+"action":"stringLength","description":"Gets the string length",
+"parameters":[{"locator":"","value":"String"}],
+"examples":[{"action":"stringLength","locator":"","value":"automation","comment":"Gets the length of the string"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to the length of the string"}]
+},
+{
+"action":"stringConcat","description":"Concatenate the given strings",
+"parameters":[{"locator":"","value":"String1&String2&..."}],
+"examples":[{"action":"stringConcat","locator":"","value":"hi&hello","comment":"Will be concatenated to hihello"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to the concatenated string"}]
+},
+{
+"action":"assertTextEqual","description":"To check if the value in the element is same as the expected value",
+"parameters":[{"locator":"Locator to identify the desired element","value":"Expected Text"}],
+"examples":[{"action":"assertTextEqual","locator":"id=username","value":"hello","comment":"Will check if the text in element with id=username is same as hello"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true if the text is equal"}]
+},
+{
+"action":"chkEnabled","description":"To check if an element is enabled",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"chkEnabled","locator":"id=username","value":"","comment":"check if element with id=username is enabled or not"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false"}]
+},
+{
+"action":"isSelected","description":"To check if an element is selected or not",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"isSelected","locator":"id=username","value":"","comment":"check if element(Radiobutton/checkbox) with id=username is selected or not"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false"}]
+},
+{
+"action":"getHomePath","description":"Gets the path to iAF.jar",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getHomePath","locator":"","value":"","comment":"Gets the home path"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Gets the home path to iAF.jar"}]
+},
+{
+"action":"getElementStatus","description":"Fetches the checked status of the element",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"getElementStatus","locator":"id=username","value":"","comment":"Fetches the checked status of the element with id=username"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false"}]
+},
+{
+"action":"printMessage","description":"To print a user desired text in the report",
+"parameters":[{"locator":"","value":"Text to be printed in report"}],
+"examples":[{"action":"printMessage","locator":"","value":"hello","comment":"hello would be printed in the report"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"printMessageAsText","description":"To print a user desired text in the report , it will not replace {} dynamic text",
+"parameters":[{"locator":"","value":"Text to be printed in report"}],
+"examples":[{"action":"printMessageAsText","locator":"","value":"hello","comment":"To print a user desired text in the report , it will not replace {} dynamic text"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"stringSplit","description":"Splits the given string based on the delimiter. Use <space> if delimiter is space.",
+"parameters":[{"locator":"text to be split","value":"delimiter"}],
+"examples":[{"action":"stringSplit","locator":"hello&hi","value":"&","comment":"Would be split based on delimiter"}],
+"dynamic":[{"name":"{V_Sr.No_0},{V_Sr.No_1},...","description":"The values split based on the delimiter"}]
+},
+{
+"action":"getValue_js","description":"Fetches the value of the element",
+"parameters":[{"locator":"Locator to identify the web element","value":""}],
+"examples":[{"action":"getValue_js","locator":"id=username","value":"","comment":"Fetches the value at the element"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the value in the variable"}]
+},
+{
+"action":"DBselect_Excel","description":"To put the results of Select Query to an excel file under TestData folder",
+"parameters":[{"locator":"","value":"Select Query"}],
+"examples":[{"action":"DBselect_Excel","locator":"","value":"Select * from emp","comment":"Will put all the records into an excel file"}],
+"dynamic":[{"name":"{V_Sr.No_0_ColumnName},...","description":"For each cell in each row, there would a corresponding variable created"}]
+},
+{
+"action":"getTableValues","description":"Fetches the table values in a text file located in TestLog folder.",
+"parameters":[{"locator":"xPath to identify the table. Write the xPath till TR","value":""}],
+"examples":[{"action":"getTableValues","locator":"xpath=//table/tr","value":"","comment":"Fetches the table values "}],
+"dynamic":[{"name":"{V_Sr.No_1_1},{V_Sr.No_1_2}.....","description":"All values of the table"}]
+},
+{
+"action":"getLocatorMatchCount","description":"Fetches the number of matches with the identifier given.",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"getLocatorMatchCount","locator":"xpath=//table/tr","value":"","comment":"Fetches the number of matches"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Number of matches"}]
+},
+{
+"action":"getColumnValues","description":"Fetches the column values of a specific table and stores the values in a text file located in TestLog folder",
+"parameters":[{"locator":"xPath to identify the table. Write the xPath till TR","value":"Column Number"}],
+"examples":[{"action":"getColumnValues","locator":"xpathh=//table/tr","value":"2","comment":"Fetches the 2nd column values"}],
+"dynamic":[{"name":"{V_Sr.No_1_1},{V_Sr.No_1_2}.....","description":"2nd column values"}]
+},
+{
+"action":"setScriptTimeOut","description":"Sets the Timeout for asynchronous script",
+"parameters":[{"locator":"","value":"Time in seconds"}],
+"examples":[{"action":"setScriptTimeOut","locator":"","value":"10","comment":"Sets the timeout for asynchronous scripts"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"checkSubString","description":"To check for the presence of substring in main string",
+"parameters":[{"locator":"","value":"mainString&subString"}],
+"examples":[{"action":"checkSubString","locator":"","value":"hello&he","comment":"To check if he is a substring of hello"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false"}]
+},
+{
+"action":"changeDateFormat","description":"To change the given date to a specified format",
+"parameters":[{"locator":"str=newDateFormat","value":"Date"}],
+"examples":[{"action":"changeDateFormat","locator":"str=MMM dd yyyy","value":"01-01-1990","comment":"Changes this to Jan 01 1990"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The date in the specified format would be stored in the variable"}]
+},
+{
+"action":"getTableSize","description":"Fetches the numbers of rows and columns in the table. Use xpath for the locator",
+"parameters":[{"locator":"xpath=Provide value till tr","value":""}],
+"examples":[{"action":"getTableSize","locator":"xpath=//table/tr","value":"","comment":"Fetches the row, column details"}],
+"dynamic":[{"name":"{V_Sr.No_rowcount}, {V_Sr.No_colcount}","description":"The rowCount and column count respectively"}]
+},
+{
+"action":"getWindowHandle","description":"Fetches the windowHandle for the current window. Can be used for switching at a later stage",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getWindowHandle","locator":"","value":"","comment":"Gets window handle"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Window Handler"}]
+},
+{
+"action":"getLinks","description":"Gets the links with a common parent",
+"parameters":[{"locator":"locator to identify the common parent","value":""}],
+"examples":[{"action":"getLinks","locator":"id=username","value":"","comment":"Fetches all the links under the element with id=username"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Links seperated by ;"}]
+},
+{
+"action":"verifyLinks","description":"Verifies the specified links in the URL mentioned",
+"parameters":[{"locator":"url = URL of the webpage","value":"link1;link2;link3...."}],
+"examples":[{"action":"verifyLinks","locator":"url=http://www.google.com","value":"http://www.test.com;http://automation.com","comment":"Checks whether the links are present in the webpage"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"clickInAnyIFrame","description":"Clicks on the desired element even if the element is in a first-level frame",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"clickInAnyIFrame","locator":"id=username","value":"","comment":"Clicks on the element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setDNSServer","description":"Sets the DNS server details",
+"parameters":[{"locator":"","value":"PreferredAddress&AlternateAddress"}],
+"examples":[{"action":"setDNSServer","locator":"","value":"default","comment":"Sets it to the default settings"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getSystemDatenew","description":"To get the system date in dd_MM_hh_mm_ss format",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getSystemDatenew","locator":"","value":"","comment":"Fetches the system date in dd_MM_hh_mm_ss format"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Date in dd_MM_hh_mm_ss format"}]
+},
+{
+"action":"getDates","description":"To get the date from a certain element and check within a range",
+"parameters":[{"locator":"Locator to identify the element","value":"LowerBoundDate - UpperBoundDate"}],
+"examples":[{"action":"getDates","locator":"id=date","value":"01/01/1990-02/02/1990","comment":"Checks if the date in element with id=date is with the given range"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false"}]
+},
+{
+"action":"smartClick","description":"To click on an element and assert the presence of expected element",
+"parameters":[{"locator":"Locator of element you want to click","value":"Expected element to be asserted"}],
+"examples":[{"action":"smartClick","locator":"id=username","value":"id=homepageIcon","comment":"Clicks on element with id=username and waits for the element with id=homepageIcon to appear"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getNumbers","description":"To check if the number at the element is the specified range",
+"parameters":[{"locator":"Locator to identify the element","value":"firstNum to LastNum"}],
+"examples":[{"action":"getNumbers","locator":"id=username","value":"1 to 10","comment":"Checks if the number is between 1 and 10"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false"}]
+},
+{
+"action":"setBrowserProxy","description":"Mention the proxy details",
+"parameters":[{"locator":"","value":"ProxyHost:port"}],
+"examples":[{"action":"setBrowserProxy","locator":"","value":"127.0.0.1:1234","comment":"Sets the proxy"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setCheckbox","description":"Sets the checkbox to the desired value",
+"parameters":[{"locator":"Locator to identify the checkbox","value":"check/uncheck"}],
+"examples":[{"action":"setCheckbox","locator":"id=accept","value":"check","comment":"Checks the checkbox with id=accept"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"mouseClick","description":"Clicking on a specific element",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"mouseClick","locator":"id=username","value":"","comment":"Clicks on the element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"sk_click","description":"Performs click using Sikuli",
+"parameters":[{"locator":"img=Path to the image in SikuliObject folder in Objects folder","value":""}],
+"examples":[{"action":"sk_click","locator":"img=submit.PNG","value":"","comment":"Click on the submit button on screen if it matches the image"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"sk_type","description":"Performs type using Sikuli",
+"parameters":[{"locator":"img=Path to the image in SikuliObject folder in Objects folder","value":"Text to be typed"}],
+"examples":[{"action":"sk_type","locator":"id=username","value":"hello","comment":"Types hello in the username field if it matches the image"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"sk_typeAndEnter","description":"Performs type + ENTER using Sikuli",
+"parameters":[{"locator":"img=Path to the image in SikuliObject folder in Objects folder","value":"Text to be typed"}],
+"examples":[{"action":"sk_typeAndEnter","locator":"id=username","value":"hello","comment":"Types hello and presses ENTER in the username field if it matches the image"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"sk_mouseHover","description":"Performs Mouse Hover on the image matched",
+"parameters":[{"locator":"img=Path to the image in SikuliObject folder in Objects folder","value":""}],
+"examples":[{"action":"sk_mouseHover","locator":"id=username","value":"","comment":"Mouse Hovers on the image matched"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"sk_mouseMove","description":"Moves the mouse to the image matched",
+"parameters":[{"locator":"img=Path to the image in SikuliObject folder in Objects folder","value":""}],
+"examples":[{"action":"sk_mouseMove","locator":"id=username","value":"","comment":"Moves mouse to the image matched"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"sk_scrollDown","description":"Scrolls down in the page",
+"parameters":[{"locator":"","value":"Number of time you wish to scroll down"}],
+"examples":[{"action":"sk_scrollDown","locator":"","value":"3","comment":"Performs down scroll 3 times"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"sk_scrollUp","description":"Scrolls up in the page",
+"parameters":[{"locator":"","value":"Number of time you wish to scroll up"}],
+"examples":[{"action":"sk_scrollUp","locator":"","value":"3","comment":"Performs up scroll 3 times"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getAlertText","description":"Gets the text in the active alert box",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getAlertText","locator":"","value":"","comment":"Fetches the text in the alert box"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Text captured in alert box"}]
+},
+{
+"action":"getTagName","description":"Gets the tag name of the desired element",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"getTagName","locator":"id=username","value":"","comment":"Fetches the tag name of the element with id=username"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Tag name of the desired element"}]
+},
+{
+"action":"getScreenshot","description":"Takes the screenshot of the Webpage",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getScreenshot","locator":"","value":"","comment":"Takes the screenshot"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"ElementPresent","description":"To check if element is present or not. Does not fail the test case if the element is not found.",
+"parameters":[{"locator":"Locator to identify the element","value":"Time in seconds"}],
+"examples":[{"action":"ElementPresent","locator":"id=username","value":"10","comment":"Checks if element with id=username is present or not"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false"}]
+},
+{
+"action":"click_js","description":"Clicks on the desired element using Javascript. Use id/name/value/xpath for the locator",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"click_js","locator":"id=username","value":"","comment":"Clicks on element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setAcceptUntrustedCertificates","description":"To accept untrusted Certificates",
+"parameters":[{"locator":"","value":"true/false"}],
+"examples":[{"action":"setAcceptUntrustedCertificates","locator":"","value":"true","comment":"Accept the untrusted certificates"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setEnableNativeEvents","description":"To Enable Native Events",
+"parameters":[{"locator":"","value":"true/false"}],
+"examples":[{"action":"setEnableNativeEvents","locator":"","value":"true","comment":"Enable Native Events"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"openMobileBrowserEmulator","description":"Opens the desired URL in a mobile emulator in a chrome browser",
+"parameters":[{"locator":"Device Name","value":"Desired URL"}],
+"examples":[{"action":"openMobileBrowserEmulator","locator":"Google Nexus 5","value":"http://www.google.com","comment":"Opens http://www.google.com in Google Nexus 5 emulator"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"switchToWindowByTitle","description":"Switching to another window using its title",
+"parameters":[{"locator":"","value":"Title of the Window you want to switch to"}],
+"examples":[{"action":"switchToWindowByTitle","locator":"","value":"HomePage","comment":"Switches to the window with Title as HomePage"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getCurrentWindowTitle","description":"Fetches the current windows title",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getCurrentWindowTitle","locator":"","value":"","comment":"Fetches the current Windows title"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Current windows title is stored in the variable"}]
+},
+{
+"action":"assertCurrentWindowTitle","description":"Asserts current window title with the title provided",
+"parameters":[{"locator":"","value":"Expected Title"}],
+"examples":[{"action":"assertCurrentWindowTitle","locator":"","value":"HomePage","comment":"Checks if the current window title is HomePage"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"switchToWindowByURL","description":"Switches to the window using its URL",
+"parameters":[{"locator":"","value":"URL of the window you want to switch to"}],
+"examples":[{"action":"switchToWindowByURL","locator":"","value":"http://www.google.com","comment":"Switches to the window using its URL"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"assertValuePresent","description":"Checks if the value attribute of the element matches with the expected value",
+"parameters":[{"locator":"Locator to identify the element","value":"Expected Value"}],
+"examples":[{"action":"assertValuePresent","locator":"id=username","value":"hello","comment":"Checks if the value attribute of element with id=username is hello"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the value attribute of the element as the variable"}]
+},
+{
+"action":"assertAttributeValue","description":"To assert a particular attribute of an element",
+"parameters":[{"locator":"Locator to identify the element","value":"Expected attribute name = Expected Attribute value"}],
+"examples":[{"action":"assertAttributeValue","locator":"id=username","value":"name=user_name","comment":"Checks if the name attribute of the element with id=username has user_name as the value"}],
+"dynamic":[{"name":"No dynamic variable are generated","description":""}]
+},
+{
+"action":"validateTextInPage","description":"Checks if the mentioned text is present in the webpage or not",
+"parameters":[{"locator":"","value":"Text to be validated"}],
+"examples":[{"action":"validateTextInPage","locator":"","value":"automation","comment":"Checks whether the text automation is present in the web page or not"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"If text is present, its stored in the variable"}]
+},
+{
+"action":"clearAllTextFields","description":"Clears all the text fields",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"clearAllTextFields","locator":"","value":"","comment":"Clears all text fields"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"selectByVisibleText","description":"Selects the given value from the dropdown",
+"parameters":[{"locator":"Locator to identify the dropdown menu","value":"Value to be selected"}],
+"examples":[{"action":"selectByVisibleText","locator":"id=countries","value":"India","comment":"Selects India from the dropdown menu"}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"getHtmlSourceCode","description":"Gets the source code into a file",
+"parameters":[{"locator":"","value":"Path of the file"}],
+"examples":[{"action":"getHtmlSourceCode","locator":"","value":"D:/iAF/SourceCode.txt","comment":"Stores the html source code into the file"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Html source code is stored in the variable"}]
+},
+{
+"action":"assertElementPresent","description":"Asserts the presence of the element. Fails the test case if the element is not found",
+"parameters":[{"locator":"Locator to identify the element","value":""}],
+"examples":[{"action":"assertElementPresent","locator":"id=username","value":"","comment":"Asserts whether the element is present or not"}],
+"dynamic":[{"name":"{V_Sr.no}","description":"Sets the variable to true/false"}]
+},
+
+{
+"action":"executeStoredFunction","description":"Please contact MAGiX Team",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"executeStoredFunction","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"executeStoredProcedure","description":"Please contact MAGiX Team",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"executeStoredProcedure","locator":"","value":"","comment":""}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"robotPoweredDragAndDrop","description":"Performs drag and drop operation from Source to Destination. Make sure the object identifier is same for both source and destination",
+"parameters":[{"locator":"Locator to identify the source","value":"Locator to identify the destination"}],
+"examples":[{"action":"robotPoweredDragAndDrop","locator":"id=source","value":"destination","comment":"Performs drag and drop"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"assertAttributePresent","description":"Asserts where the desired attribute is present for the element",
+"parameters":[{"locator":"Locator to identify the element","value":"Desired attribute to be asserted"}],
+"examples":[{"action":"assertAttributePresent","locator":"id=username","value":"name","comment":"Checks whether the element with id=username has an attribute called name"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false"}]
+},
+{
+"action":"assertTextPresent","description":"Asserts whether the desired text is present at the element or not",
+"parameters":[{"locator":"Locator to identify the element","value":"Text to be asserted"}],
+"examples":[{"action":"assertTextPresent","locator":"id=username","value":"hello","comment":"Check if hello is present in element with id=username"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false"}]
+},
+{
+"action":"variableContainsValue","description":"Checks whether a variable contains a certain value",
+"parameters":[{"locator":"NA","value":"OriginalVariable&ToBeCheckedValue"}],
+"examples":[{"action":"variableContainsValue","locator":"","value":"test&t","comment":"Checks whether t is present in test"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false"}]
+},
+{
+"action":"waitForTextPresent","description":"Waits for the text in a specific element for given time",
+"parameters":[{"locator":"xPath of the element to be searched","value":"DesiredText&TimeInSeconds"}],
+"examples":[{"action":"waitForTextPresent","locator":"id=username","value":"test&10","comment":"Searches for test in the element with id=username for 10 seconds"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"compareTextwithDropDownValues","description":"To check if given text is among the options in the dropdown",
+"parameters":[{"locator":"Locator to identify the dropdown","value":"Option to be searched"}],
+"examples":[{"action":"compareTextwithDropDownValues","locator":"id=dropdown","value":"one","comment":"Searches for the given options in the available options in dropdown with id=dropdown"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Sets the variable to true/false"}]
+},
+{
+"action":"compareAllDropDownValues","description":"Check if all the given values are present as options in the dropdown menu",
+"parameters":[{"locator":"Locator to identify the dropdown","value":"Value1&Value2&..."}],
+"examples":[{"action":"compareAllDropDownValues","locator":"id=dropdown","value":"","comment":""}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"randomStringGenerator","description":"To generate a specific type of random value",
+"parameters":[{"locator":"numeric/alphabetic/alphanumeric","value":"Length of the desired value to be generated"}],
+"examples":[{"action":"randomStringGenerator","locator":"numeric","value":"4","comment":"A random 4 digit number would be generated"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The desired random number would be stored in the variable"}]
+},
+{
+"action":"compareListElements","description":"To compare if the given values are same as the values in the webpage",
+"parameters":[{"locator":"xPath of the elements you want to search","value":"value1&value2&..."}],
+"examples":[{"action":"compareListElements","locator":"xpath=//table/tr/td","value":"hello&hi","comment":"Checks if the table has hello and hi"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getDefaultDropDownValue","description":"Gets the default Selected values in the dropdown",
+"parameters":[{"locator":"Locator to identify the dropdown","value":""}],
+"examples":[{"action":"getDefaultDropDownValue","locator":"id=dropdown","value":"","comment":"Gets the default selected values in the dropdown with id=dropdown"}],
+"dynamic":[{"name":"{V_Sr.No_1},{V_Sr.No_1},...","description":"The selected options"}]
+},
+{
+"action":"getSelectedDropDownValue","description":"Gets the selected dropdown value",
+"parameters":[{"locator":"Locator to identify the dropdown","value":""}],
+"examples":[{"action":"getSelectedDropDownValue","locator":"id=dropdown","value":"","comment":"Gets the selected option"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The selected value is stored in the variable"}]
+},
+{
+"action":"assertselectedDropDownValue","description":"Check if the selected value in the dropdown is same as the value provided",
+"parameters":[{"locator":"Locator to identify the dropdown","value":"Expected Value"}],
+"examples":[{"action":"assertselectedDropDownValue","locator":"id=dropdown","value":"hello","comment":"Checks if hello is the selected value in the dropdown with id=dropdown"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"printMessageWithStatus","description":"Passes/Fails the test step with a message",
+"parameters":[{"locator":"pass/fail","value":"Message you wanted to display"}],
+"examples":[{"action":"printMessageWithStatus","locator":"pass","value":"Hello","comment":"Passes the test step with the message"}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"convertXMLtoString","description":"Converts the XML provided in the path to a string",
+"parameters":[{"locator":"","value":"Path of the XML file"}],
+"examples":[{"action":"convertXMLtoString","locator":"","value":"D:/XMLFiles/hello.xml","comment":"Stores the XML as a string"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The given XML as a string"}]
+},
+{
+"action":"getXMLString","description":"Converts the XML provided in the path to a string",
+"parameters":[{"locator":"","value":"Path of the XML file"}],
+"examples":[{"action":"getXMLString","locator":"D:/XMLFiles/hello.xml","value":"xpath","comment":"Stores the XML as a string"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The given XML as a string"}]
+},
+{
+"action":"getNodeTextInNameSpaceXML","description":"Converts the XML provided in the path to a string",
+"parameters":[{"locator":"","value":"Path of the XML file"}],
+"examples":[{"action":"getNodeTextInNameSpaceXML","locator":"D:/XMLFiles/hello.xml&//ns2:Date[1]/ns2:Date","value":"ns2&broadridge:spsi:gloss:Transaction","comment":"Stores the XML as a string"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The given XML as a string"}]
+},
+{
+"action":"countOfFileInDir","description":"Gives the count of files in the directory",
+"parameters":[{"locator":"","value":"Path to the folder"}],
+"examples":[{"action":"countOfFileInDir","locator":"","value":"C:/Users/cchak01/Downloads","comment":"Gives the count of files in the directory"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"It will return the count of files in the directory"}]
+},
+{
+"action":"deleteFilesInDir","description":"delete all the files in the directory",
+"parameters":[{"locator":"","value":"Path to the folder"}],
+"examples":[{"action":"deleteFilesInDir","locator":"","value":"C:/Users/cchak01/Downloads","comment":"delete all the files in the directory"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"generateRandomString","description":"To generate a specific type of random value",
+"parameters":[{"locator":"numeric/alphabetic/alphanumeric","value":"Length of the desired value to be generated"}],
+"examples":[{"action":"generateRandomString","locator":"numeric","value":"4","comment":"A random 4 digit number would be generated"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"The desired random number would be stored in the variable"}]
+},
+{
+"action":"compareTxtFiles","description":"comparing Text Files",
+"parameters":[{"locator":"file Path1","value":"file Path2"}],
+"examples":[{"action":"compareTxtFiles","locator":"C:/Users/cchak01/Downloads/SC19_swift_input.txt","value":"C:/Users/cchak01/Downloads/SC19_swift_input1.txt","comment":"comapring Text Files"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"replaceAllinTxtFile","description":"replace the text in the text file for all the occurrences",
+"parameters":[{"locator":"Path of the file","value":"text to be replaced & text to replace"}],
+"examples":[{"action":"replaceAllinTxtFile","locator":"C:/Users/cchak01/Downloads/SC14.2_step_output_2.txt","value":"20211221093554T068AFSTEPM000013&space","comment":""}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"removeNodeUsingXpath","description":"remove Node Using Xpath",
+"parameters":[{"locator":"Path of the file","value":"xpath to remove"}],
+"examples":[{"action":"removeNodeUsingXpath","locator":"C:/Users/cchak01/Documents/ENTITLEMENT_EXPORT_20220421_015807.xml","value":"//Balances/Balance[4]","comment":""}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"setImplicitTimeOut","description":"Sets the implicit time out",
+"parameters":[{"locator":"","value":"Time in seconds"}],
+"examples":[{"action":"setImplicitTimeOut","locator":"","value":"10","comment":"Sets the implicit time out to 10 seconds"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setPageLoadTimeOut","description":"Sets the page load time out",
+"parameters":[{"locator":"","value":"Time in seconds"}],
+"examples":[{"action":"setPageLoadTimeOut","locator":"","value":"10","comment":"Sets the page load time out to 10 seconds"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"compareTableColumnValues","description":"To check how many times the given text is present in a specific column",
+"parameters":[{"locator":"Xpath of the table till tr","value":"ColumnNum you wanted to search & Value you want to search"}],
+"examples":[{"action":"compareTableColumnValues","locator":"xpath=//table/tr","value":"4&hello","comment":"Searches for hello in the 4th column in the table"}],
+"dynamic":[{"name":"{V_Sr.No_count}","description":"Number of times the value is being repeated"}]
+},
+{
+"action":"switchToDefaultContent","description":"Switches to the default content. This should be done after switching to a frame",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"switchToDefaultContent","locator":"","value":"","comment":"Switching to the default content"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"switchToPopUpWindow","description":"Switches to a pop-up Window",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"switchToPopUpWindow","locator":"","value":"","comment":"Switches to a pop up window"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"switchToChildWindow","description":"Switches to a child window",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"switchToChildWindow","locator":"","value":"","comment":"Switches to the child window"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getWindowHandlesNumber","description":"Fetches the total number of windows open",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getWindowHandlesNumber","locator":"","value":"","comment":"fetches the total number of windows open"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Total Number of windows open"}]
+},
+{
+"action":"waitForElementToBePresent","description":"Waits for a specific element for the time specified",
+"parameters":[{"locator":"Locator to identify the element","value":"waiting time in seconds"}],
+"examples":[{"action":"waitForElementToBePresent","locator":"id=username","value":"10","comment":"Waits for 10 seconds for element with id=username to be present"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"waitForElementVisible","description":"waiting for an element to be visible",
+"parameters":[{"locator":"Locator to identify the element","value":"waiting time in seconds"}],
+"examples":[{"action":"waitForElementVisible","locator":"id=username","value":"10","comment":"Waits for 10 seconds for element with id=username to be visible"}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"dateWithinGivenRange","description":"To check whether a specific date is in the given range",
+"parameters":[{"locator":"date=DateToBeChecked","value":"StartDate - EndDate"}],
+"examples":[{"action":"dateWithinGivenRange","locator":"02/02/2017","value":"01/02/2017 - 03/02/2017","comment":"Checks whether 02/02/2017 is in the given range"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"waitForAlertPresent","description":"Wait for alert to be present",
+"parameters":[{"locator":"","value":"Time in seconds"}],
+"examples":[{"action":"waitForAlertPresent","locator":"","value":"10","comment":"waits for 10 seconds for the alert to be present"}],
+"dynamic":[{"name":"NA","description":""}]
+},
+{
+"action":"waitAndAlertAccept","description":"Waits for specified time and accepts alert",
+"parameters":[{"locator":"y","value":"Time in seconds"}],
+"examples":[{"action":"waitAndAlertAccept","locator":"y","value":"5","comment":"Waits for the alert box for 5 seconds and then accepts it"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"waitForElementClickable","description":"Waits for the element to be clickable",
+"parameters":[{"locator":"Locator to identify the element","value":"Waiting time in seconds"}],
+"examples":[{"action":"waitForElementClickable","locator":"id=username","value":"10","comment":"Waits for 10 seconds for the element with id=username to be clickable"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"validateDateRange","description":"To validate if the dates in the column are in the given range",
+"parameters":[{"locator":"xpath=xPath of the column data","value":"startDate to endDate"}],
+"examples":[{"action":"validateDateRange","locator":"xpath=//table/td[2]","value":"01/01/2017 to 03/01/2017","comment":"Checks whether the date in the xpath mentioned is in the given range"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"validateNumberRange","description":"To validate if the numbers in the column are in the given range",
+"parameters":[{"locator":"xpath=xPath of the column data","value":"FirstNum to LastNum"}],
+"examples":[{"action":"validateNumberRange","locator":"xpath=//table/td[2]","value":"1 to 10","comment":"Checks whether the numbers in the xpath mentioned is in the given range"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"validateSubstring","description":"To validate if a specific string is present in the values of a column",
+"parameters":[{"locator":"xpath=xPath of the column data","value":"String to be searched"}],
+"examples":[{"action":"validateSubstring","locator":"xpath=//table/td[2]","value":"auto","comment":"Checks if auto is present"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"dateFunctionality","description":"Adds the given number of days to the current date and gives the date in dd/MM/yyyy format",
+"parameters":[{"locator":"","value":"Number of days to be added to current date"}],
+"examples":[{"action":"dateFunctionality","locator":"","value":"10","comment":"Adds 10 days to the current date"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"New date after addition in dd/MM/yyyy format"}]
+},
+{
+"action":"assertColumnSorted","description":"Check if the values in the column are in ascending/descending order. Can be used also for dates in dd/MM/yyyy format",
+"parameters":[{"locator":"xpath of the column values","value":"ascending/descending/date ascending/date descending"}],
+"examples":[{"action":"assertColumnSorted","locator":"xpath=//table/td[1]","value":"ascending","comment":"Checks if the values are ascending or not"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"assertCheckboxStatus","description":"Asserts if the checkbox is checked or unchecked",
+"parameters":[{"locator":"Locator to identify the checkbox","value":"checked/unchecked"}],
+"examples":[{"action":"assertCheckboxStatus","locator":"id=agreeConditions","value":"checked","comment":"Asserts if the checkbox with id=agreeConditions is checked or not"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"sk_waitForElementVisible","description":"Wait for the image matched to be visible",
+"parameters":[{"locator":"img=Path to the image in SikuliObject folder in Objects folder","value":""}],
+"examples":[{"action":"sk_waitForElementVisible","locator":"id=username","value":"","comment":"Waits for the image matched"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"openAngular","description":"Opens the Angular application in the mentioned browser",
+"parameters":[{"locator":"name of the browser. Eg- chrome, firefox, ie","value":"URL you wish to launch"}],
+"examples":[{"action":"openAngular","locator":"chrome","value":"https://hello-angularjs.appspot.com/sorttablecolumn","comment":"Opens https://hello-angularjs.appspot.com/sorttablecolumn in chrome browser"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"openOnBrowserStack","description":"Opens the specified URL in the mentioned OS and browser on BrowserStack (If \\u0027MutliBrowser\\u0027 is selected, the desired OS-Browser combinations must be specified in BrowserStackMultiBrowser.properties file)",
+"parameters":[{"locator":"mobileorTablet&Version&device&browser&browserVersion&seleniumVersion","value":"TestName&ApplicationURL"}],
+"examples":[{"action":"openOnBrowserStack","locator":"mobile&11&iPhone 8 Plus&chrome&91&3.141.59","value":"Sample&https://google.com","comment":"Opens https://google.com on BrowserStack with specified capabilites"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"openBrowser_Experitest","description":"Opens the specified URL in the mentioned OS and browser on BrowserStack (If \\u0027ExperiTest MutliBrowser\\u0027 is selected, the desired OS-Browser combinations must be specified in ExperiTestMultiBrowser.properties file)",
+"parameters":[{"locator":"mobileorTablet&Version&device&browser&browserVersion&seleniumVersion","value":"ApplicationURL"}],
+"examples":[{"action":"openBrowser_Experitest","locator":"Windows 10&MicrosoftEdge&95.0.1020.9","value":"https://google.com","comment":"Opens https://google.com on Experitest with specified capabilites"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getAttribute_Pass","description":"Fetches the given attributes value for the element specified",
+"parameters":[{"locator":"locator to identify the element","value":"attribute whos value is desired"}],
+"examples":[{"action":"getAttribute_Pass","locator":"id=username","value":"name","comment":"Will fetch the value of name attribute for the element with id=username"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the value of the said attribute as a variable"}]
+},
+{
+"action":"getFullScreenshot","description":"Takes the full screenshot of the Webpage",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getFullScreenshot","locator":"","value":"","comment":"Takes the full screenshot"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"DBselect_CSV","description":"To put the results of Select Query to the CSV file under TestData folder",
+"parameters":[{"locator":"","value":"Select Query"}],
+"examples":[{"action":"DBselect_CSV","locator":"","value":"Select * from emp","comment":"Will put all the records into an CSV file"}],
+"dynamic":[{"name":"{V_Sr.No_0_ColumnName},...","description":"For each cell in each row, there would a corresponding variable created"}]
+},
+{
+"action":"keyEvents","description":"This keyword will perform the keyboard events",
+"parameters":[{"locator":"","value":"tab/enter/pagedown/pageup/downarrow/uparrow/rightarrow/leftarrow"}],
+"examples":[{"action":"keyEvents","locator":"","value":"tab","comment":"Perform the tab key event"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"scrollPageDown","description":"To perform PageDown action on the webPage",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"scrollPageDown","locator":"","value":"","comment":"Performs the scroll page down"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"scrollPageUp","description":"To perform PageUp action on the webPage",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"scrollPageUp","locator":"","value":"","comment":"Performs the scroll page Up"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"scrollToElement","description":"Scrolls to the specific element",
+"parameters":[{"locator":"locator to identify the element","value":""}],
+"examples":[{"action":"scrollToElement","locator":"id=username","value":"","comment":"Scrolls to the element with id=username"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"validatePDF","description":"Validate the PDF file using Visual Testing",
+"parameters":[{"locator":"","value":"filePath"}],
+"examples":[{"action":"validatePDF","locator":"","value":"c:/abcd/a.pdf","comment":"Validate the PDF file using Visual Testing"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"returns the boolean variable true/false true-indicates differences"}]
+},
+{
+"action":"enableVisualTest","description":"Enables Visual Testing",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"enableVisualTest","locator":"","value":"","comment":"Enable Visual Testing"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"splitString","description":"Splits the given string based on the delimiter",
+"parameters":[{"locator":"text to be split","value":"delimiter"}],
+"examples":[{"action":"splitString","locator":"str=hello&hi","value":"&","comment":"Would be split based on delimiter"}],
+"dynamic":[{"name":"{V_Sr.No_0},{V_Sr.No_1},...","description":"The values split based on the delimiter"}]
+},
+{
+"action":"disableVisualTest","description":"Disables Visual Testing",
+"parameters":[{"locator":"","value":""}],
+"examples":[{"action":"disableVisualTest","locator":"","value":"","comment":"Disable Visual Testing"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setTags","description":"sets the Tag name to the testcase",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"setTags","locator":"","value":"TagName","comment":"sets the Tag name to the testcase"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"setUserPersona","description":"sets the userPersona to the testcase",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"setUserPersona","locator":"","value":"TagName","comment":"sets the userPersona to the testcase"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getDelimiterCount","description":"Gets the delimiter count",
+"parameters":[{"locator":"NA","value":"NA"}],
+"examples":[{"action":"getDelimiterCount","locator":"str=string","value":"delimiter","comment":"Gets the delimiter count"}],
+"dynamic":[{"name":"No dynamic variables are generated","description":""}]
+},
+{
+"action":"getTextBasedOnPositionInTxtFile","description":"get the Text Based On Position In TxtFile",
+"parameters":[{"locator":"path to the txt file","value":"startPosition&EndPosition"}],
+"examples":[{"action":"getTextBasedOnPositionInTxtFile","locator":"C:/Users/cchak01/Downloads/SC03_Output_Fidessa_USTP.txt","value":"445&448","comment":"get the Text Based On Position In TxtFile"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"It will return the text between the positions"}]
+},
+{
+"action":"comapreTxtFiles","description":"comapring Text Files",
+"parameters":[{"locator":"file Path1","value":"file Path2"}],
+"examples":[{"action":"comapreTxtFiles","locator":"C:/Users/cchak01/Downloads/SC19_swift_input.txt","value":"C:/Users/cchak01/Downloads/SC19_swift_input1.txt","comment":"comapring Text Files"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"reNameFile","description":"reName old file name to new File Name",
+"parameters":[{"locator":"Sourcefile","value":"Destfile"}],
+"examples":[{"action":"reNameFile","locator":"C:/Users/cchak01/Downloads/SC19_swift_input.txt","value":"C:/Users/cchak01/Downloads/SC19_swift_input1.txt","comment":"reName old file name to new File Name"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"deleteFile","description":"deletes the given File Name",
+"parameters":[{"locator":"","value":"FilePath"}],
+"examples":[{"action":"deleteFile","locator":"","value":"C:/Users/cchak01/Downloads/SC19_swift_input1.txt","comment":"deletes the File Name"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"replaceTxtBasedOnPositionInTxtFile","description":"replace the text based on the position in text file",
+"parameters":[{"locator":"FilePath","value":"txt&ReplacingTxtint&Nochars"}],
+"examples":[{"action":"replaceTxtBasedOnPositionInTxtFile","locator":"C:/Users/cchak01/Downloads/SC19_swift_output.txt","value":":16S:SETPRTY& &13","comment":"replace the text based on the position in text file"}],
+"dynamic":[{"name":"","description":""}]
+},
+{
+"action":"removeBlankLinesInFile","description":"removes the blank lines from the file",
+"parameters":[{"locator":"","value":"filePath"}],
+"examples":[{"action":"removeBlankLinesInFile","locator":"","value":"C:/Users/cchak01/Downloads/SC19_swift_output.txt","comment":"removes the blank lines from the file"}],
+"dynamic":[{"name":"","description":""}]
+},
+{
+"action":"getLineUsingTxtFromTxtFile","description":"reads the line using the text from the text file",
+"parameters":[{"locator":"FilePath","value":"units"}],
+"examples":[{"action":"getLineUsingTxtFromTxtFile","locator":"C:/Users/cchak01/Downloads/SC19_swift_input.txt","value":"Units","comment":"reads the line using the text from the text file"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"returns the line which reads from the getLineUsingTxtFromTxtFile "}]
+},
+{
+"action":"removeSpecificLineInFile","description":"Removes the line specified from the file",
+"parameters":[{"locator":"kafkaToolPath","value":"topicName&InputFilePath"}],
+"examples":[{"action":"removeSpecificLineInFile","locator":"xml filePath","value":"End of Message","comment":"Removes the line specified from the file"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"replaceLineInJsonTxtFile","description":"replace the line in json file",
+"parameters":[{"locator":"filePath","value":"tagname&value"}],
+"examples":[{"action":"replaceLineInJsonTxtFile","locator":"C:\\Users\\cchak01\\Downloads\\SC19_swift_input.txt","value":"Units&100089","comment":"replace the line in json file"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"kafkaProducer","description":"kafkaProducer",
+"parameters":[{"locator":"kafkaToolPath","value":"topicName&InputFilePath"}],
+"examples":[{"action":"kafkaProducer","locator":"c:/BMOdev/Kafka/KafkaTool.exe","value":"SideloadingRawTradeFix&C:/BMOdev/input/SC01.1_Input_Fidessa_ETP_BAGS.txt","comment":"kafka Producer"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"kafkaConsumer","description":"kafka Consumer",
+"parameters":[{"locator":"kafkaToolPath","value":"topicName&OutputPath"}],
+"examples":[{"action":"kafkaConsumer","locator":"c:\\BMOdev\\Kafka\\KafkaTool.exe","value":"GlossTrade&C:/BMOdev/output/output1.txt","comment":"Kafka Consumer"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"compareXMLFiles","description":"compare two XML Files",
+"parameters":[{"locator":"source xml file","value":"target xml file"}],
+"examples":[{"action":"compareXMLFiles","locator":"C:/BMOdev/output/output2.xml","value":"C:/BMOdev/output/Target.xml","comment":"compare two XML Files"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"removeSpecificNodeUnderRootNode","description":"remove Specific Node from the Root Node",
+"parameters":[{"locator":"strFilepath","value":"xpath1&NodeName"}],
+"examples":[{"action":"removeSpecificNodeUnderRootNode","locator":"C:/BMOdev/output/output6.xml","value":"/*ns2:Reference","comment":"remove Specific Node from the Root Node"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"updateTradeIDNodeValue","description":"updateTradeIDNodeValue",
+"parameters":[{"locator":"abc","value":"Update Query"}],
+"examples":[{"action":"updateTradeIDNodeValue","locator":"","value":"Update table credentials ...","comment":"Updates the table"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+},
+{
+"action":"sourceTradeIDGeneration","description":"sourceTradeIDGeneration",
+"parameters":[{"locator":"abc","value":"Update Query"}],
+"examples":[{"action":"sourceTradeIDGeneration","locator":"","value":"Value","comment":"generates the TradeID"}],
+"dynamic":[{"name":"Value","description":""}]
+},
+{
+"action":"getLatestFileName","description":"Gets the latest file name from the path provided",
+"parameters":[{"locator":"","value":"Path to the folder"}],
+"examples":[{"action":"getLatestFileName","locator":"","value":"C:/Downloads","comment":"Fetches the latest file in the Downloads folder"}],
+"dynamic":[{"name":"{V_Sr.No}","description":"Stores the latest file name as a parameter"}]
+},
+{
+"action":"highLightWebElement","description":"Highlight the web elements if the value is true",
+"parameters":[{"locator":"","value":"true/false"}],
+"examples":[{"action":"highLightWebElement","locator":"","value":"true","comment":"Highlight the web elements if the value is true"}],
+"dynamic":[{"name":"No Dynamic variables are generated","description":""}]
+}
+]

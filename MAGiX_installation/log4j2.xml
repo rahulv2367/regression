@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="iaf.logging.helper">
+	<Appenders>
+		<TextAreaAppender name="TextAreaAppender">
+			<PatternLayout>
+				<Pattern>[%t] - %m%n</Pattern>
+			</PatternLayout>
+		</TextAreaAppender>
+
+		<File name="RedirectedLogAppender"
+			fileName="Testlog/RedirectedLog/RedirectedLog_${date:y-MM-dd_HH-mm-ss-SSS}.log">
+			<PatternLayout>
+				<Pattern>%d{ddMMMyyyy HH:mm:ss.SSS} [%t] %c{1}.%M():%L - %m%n
+				</Pattern>
+			</PatternLayout>
+		</File>
+
+		<Console name="EclipseConsoleAppender" target="SYSTEM_OUT">
+			<PatternLayout pattern="%m%n" />
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<Root level="all">
+			<AppenderRef ref="EclipseConsoleAppender" level="debug" />
+			<AppenderRef ref="RedirectedLogAppender" level="all" />
+			<AppenderRef ref="TextAreaAppender" level="info" />
+		</Root>
+	</Loggers>
+
+</Configuration>

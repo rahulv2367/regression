@@ -1,0 +1,5 @@
+"1","open","{V_data_Browser}","{V_data_URL}","",""
+"2","type","${TC_MultipleTestData_OR\OR_Multiple_TestData.OR_usernamefield}","{V_SM2_UserName}","",""
+"3","type","${TC_MultipleTestData_OR\OR_Multiple_TestData.OR_passwordfield}","{V_SM2_Password}","",""
+"4","click","${TC_MultipleTestData_OR\OR_Multiple_TestData.OR_loginbtn}","","",""
+"5","closeBrowser","","","",""

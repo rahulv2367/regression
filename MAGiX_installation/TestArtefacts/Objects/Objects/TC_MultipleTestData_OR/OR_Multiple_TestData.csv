@@ -1,0 +1,4 @@
+"Unique_ID","ID","Name","LinkText","XPATH","CSSSelector","Comments"
+"OR_usernamefield","username","","","","",""
+"OR_passwordfield","password","","","","",""
+"OR_loginbtn","","","","//button[@type='submit']","",""

@@ -1,0 +1,2 @@
+
+java -jar  ..\..\cmdlineMAGiX.jar -e  EnvironmentDetails.properties -u "D:\GATI\MAGiX_GATI_AUTO\TestArtefacts"  -testcase "TC_2.csv[AWS],If-Else-Condition.csv[Tagged_TC]" -defBrowser Edge -ReportsDestination local -PassPercentage 80 -p

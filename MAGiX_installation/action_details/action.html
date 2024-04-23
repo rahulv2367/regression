@@ -1,0 +1,186 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title></title>
+
+<script src="js/jquery.min.js"></script>
+<script>
+	var action_table = "";
+
+	var parameters_table = "";
+
+	var examples_table = "";
+
+	var dynamic_table = "";
+	
+	var loc="";
+	
+	var val="";
+
+	window.test = function(data) {
+
+		var weblibrary = jQuery.parseJSON("[" + data + "]");
+		var count = 1;
+
+		if (weblibrary[0].action != "NA") {
+
+			for (i in weblibrary) {
+
+				// ************************************************** Action Table Details **************************************************
+
+				action_table = "<tbody>"
+
+						+ "<tr>"
+						+ "<td colspan=5 bgcolor='#CBCBCB' style='border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;'><font weight='bold' size=2 face='Segoe UI'>Action : </font></td>"
+						+ "</tr>"
+						+ "<tr>"
+						+ "<td colspan=1 bgcolor=''><font weight='bold' size=2 face='Segoe UI'>"
+						+ "<b>"+weblibrary[i].action+" : </b>"
+						+ "</font><br/></td>"
+						+ "<td colspan=4 bgcolor='' style='word-wrap:break-word'><font size=2 face='Segoe UI'>"
+						+ weblibrary[i].description + "</font><br/></td>"
+						+ "</tr>"
+
+						+ "</tbody>"
+
+				$("#actiontable").append(action_table)
+
+				// ************************************************** Parameter Table Details **************************************************
+
+				parameters_table += "<tbody><tr>"
+				parameters_table += "<td colspan=5 bgcolor='#CBCBCB' style='border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;'><font weight='bold' size=2 face='Segoe UI'>Parameter(s) : </font></td>"
+				parameters_table += "</tr>"
+
+				parameters_table += "<tr>"
+				parameters_table += "<td colspan=2 style='word-wrap:break-word;border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;' bgcolor='#CBCBCB'><font weight='bold' size=2 face='Segoe UI'><b>Locator</b></font></td>"
+				parameters_table += "<td colspan=3 style='word-wrap:break-word;border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;' bgcolor='#CBCBCB'><font weight='bold' size=2 face='Segoe UI'><b>Value</b></font></td>"
+				parameters_table += "</tr>"
+
+				$.each(weblibrary[i].parameters, function(key, data) {
+
+					parameters_table += "<tr>"
+					
+						if(weblibrary[i].parameters[key].locator=="NA"){
+					        loc = "<font color='white'>" + weblibrary[i].parameters[key].locator + "</font>"
+						}else{
+							loc= weblibrary[i].parameters[key].locator;
+						}				
+					
+						if(weblibrary[i].parameters[key].value=="NA"){
+				     	  val = "<font color='white'>" + weblibrary[i].parameters[key].value + "</font>"
+						}else{
+							val = weblibrary[i].parameters[key].value;
+						}
+					
+					parameters_table += "<td colspan=2  style='word-wrap:break-word;border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;'>"
+					+"<font size=2 face='Segoe UI'>"
+							+ loc +"</font>" +"</td>"
+					parameters_table += "<td colspan=3 style='word-wrap:break-word;border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;'>"
+							+"<font size=2 face='Segoe UI'>"+ val +"</font>"+ "</td>"
+					parameters_table += "</tr>"
+
+				});
+
+				parameters_table += "</tbody>"
+
+				$("#parameterstable").append(parameters_table)
+
+				// ************************************************** Example Table Details **************************************************
+
+				if (weblibrary[i].examples.length > 0) {
+
+					examples_table += "<tbody>"
+
+					examples_table += "<tr>"
+					examples_table += "<td colspan=5 bgcolor='#CBCBCB' style='border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;'><font weight='bold' size=2 face='Segoe UI'>Example(s) : </font></td>"
+					examples_table += "</tr>"
+
+					examples_table += "<tr>"
+					examples_table += "<td colspan=1 style='word-wrap:break-word;border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;' bgcolor='#CBCBCB'><font weight='bold' size=2 face='Segoe UI'><b>Sr.No</b></font></td>"
+					examples_table += "<td style='word-wrap:break-word;border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;' bgcolor='#CBCBCB'><font weight='bold' size=2 face='Segoe UI'><b>Action</b></font></td>"
+					examples_table += "<td style='word-wrap:break-word;border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;' bgcolor='#CBCBCB'><font weight='bold' size=2 face='Segoe UI'><b>Locator</b></font></td>"
+					examples_table += "<td style='word-wrap:break-word;border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;' bgcolor='#CBCBCB'><font weight='bold' size=2 face='Segoe UI'><b>Value</b></font></td>"
+					examples_table += "<td style='word-wrap:break-word;border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;' bgcolor='#CBCBCB'><font weight='bold' size=2 face='Segoe UI'><b>Comment</b></font></td>"
+					examples_table += "</tr>"
+
+					for (j in weblibrary[i].examples) {
+						examples_table += "<tr>"
+						examples_table += "<td style='border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;' bgcolor=''>"
+								+"<font size=2 face='Segoe UI'>"+ (count++) +"</font>"+ "</td>"
+						examples_table += "<td style='border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;' bgcolor=''>"
+								+"<font size=2 face='Segoe UI'>"+ weblibrary[i].examples[j].action + "</font>"+"</td>"
+						examples_table += "<td style='border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;' bgcolor=''>"
+								+"<font size=2 face='Segoe UI'>"+ weblibrary[i].examples[j].locator +"</font>"+ "</td>"
+						examples_table += "<td style='border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;word-break:break-all;' bgcolor=''>"
+								+"<font size=2 face='Segoe UI'>"+ weblibrary[i].examples[j].value + "</font>"+"</td>"
+						examples_table += "<td style='border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;text-align:center;vertical-align:middle;word-break:break-all;' bgcolor=''>"
+								+"<font size=2 face='Segoe UI'>"+ weblibrary[i].examples[j].comment + "</font>"+"</td>"
+						examples_table += "</tr>"
+					}
+
+					examples_table += "</tbody>"
+					$("#examplestable").append(examples_table)
+				}
+
+				// ************************************************** Dynamic Variables Table Details **************************************************		
+
+				dynamic_table += "<tbody>"
+				dynamic_table += "<tr>"
+				dynamic_table += "<td colspan=5 bgcolor='#CBCBCB' style='border-left: 1px solid #bfbfbf;border-right: 1px solid #bfbfbf; border-top: 1px solid #bfbfbf;border-bottom: 1px solid #bfbfbf;' ><font weight='bold' size=2 face='Segoe UI'>Dynamic Variable(s) : </font></td>"
+				dynamic_table += "</tr>"
+
+				$.each(weblibrary[i].dynamic, function(key, data) {
+					dynamic_table += "<tr>"
+					dynamic_table += "<td colspan=1 ><font weight='bold' size=2 face='Segoe UI'>"
+							+ weblibrary[i].dynamic[key].name + "</font></td>"
+					dynamic_table += "<td colspan=1 ><font weight='bold' size=2 face='Segoe UI'>"
+							+ weblibrary[i].dynamic[key].description + "</font></td>"
+					dynamic_table += "</tr>"
+				});
+
+				dynamic_table += "</tbody>"
+
+				$("#dynamictable").append(dynamic_table);
+
+			}
+		} else if (weblibrary[0].method != "NA") {
+
+			action_table = "<tbody>"
+					+ "<tr>"
+					+ "<td bgcolor=''><font weight='bold' size=2 face='Segoe UI'>"
+					+"Data not found for method : "
+					+ weblibrary[0].method + "</font></td>" + "</tr>"
+					+ "</tbody>"
+			$("#actiontable").append(action_table)
+
+		} else {
+
+			action_table = "<tbody>" + "<tr>"
+					+ "<td bgcolor=''><font weight='bold' size=2 face='Segoe UI'>"
+					+"selected method library not found"
+					+ "</font>"
+					+"</td>"
+					+"</tr>" + "</tbody>"
+			$("#actiontable").append(action_table)
+		}
+	};
+</script>
+
+</head>
+<body>
+	<div id="entrydata">
+
+		<table id="actiontable" border=0 style='width: 100%;'></table>
+
+		<table id="parameterstable" border=0 style='width: 100%;'></table>
+
+		<table id="examplestable" border=0 style='width: 100%;'></table>
+
+		<table id="dynamictable" border=0 style='width: 100%;'></table>
+
+		<table id="" border=0 style='width: 100%;'></table>
+
+	</div>
+</body>
+</html>
