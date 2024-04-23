@@ -13,8 +13,7 @@ pipeline {
                 // Run your tests and generate JUnit test result XML files
                 script {
                     sh 'ls'
-                    sh 'cd MAGiX_installation'
-		    sh 'java -jar cmdlineMAGiX.jar -e  EnvironmentDetails.properties -u TestArtefacts -testsuite "AWS" -ReportsDestination local -headless -PassPercentage 80 -p'
+		    sh 'java -jar MAGiX_installation/cmdlineMAGiX.jar -e  EnvironmentDetails.properties -u TestArtefacts -testsuite "AWS" -ReportsDestination local -headless -PassPercentage 80 -p'
                 }
             }
         }
