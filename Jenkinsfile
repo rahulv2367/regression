@@ -5,7 +5,7 @@ pipeline {
         stage('checkout') {
             steps {
                 // Your build steps here
-                git url: 'https://github.com/rahulv2367/simplecode.git', branch: 'main'
+                git url: 'https://github.com/rahulv2367/regression.git', branch: 'main'
             }
         }
         stage('Test') {
