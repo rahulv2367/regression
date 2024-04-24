@@ -18,25 +18,19 @@ pipeline {
             }
         }
     }
-
-    post {
+     post {
         always {
-            // Copy the HTML report to the Jenkins controller
-            script {
-                sh 'cp -r /path/to/html/report $JENKINS_HOME/html_report'
-            }
-
-            // Publish HTML report from Jenkins controller
-            script {
-                publishHTML(target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: '$JENKINS_HOME/html_report',
-                    reportFiles: 'index.html',
-                    reportName: 'JUnit Test Report'
-                ])
-            }
+            publishHTML ([
+	            allowMissing: false,
+	            alwaysLinkToLastBuild: false,
+	            keepAll: false,
+	            reportDir: 'Reports',
+	            reportFiles: 'index.html',
+	            reportName: 'HTML Report',
+	            reportTitles: '',
+	            useWrapperFileDirectly: true
+            ])
         }
-    }
-}
+     }
+} 
+
