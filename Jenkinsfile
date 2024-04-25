@@ -26,7 +26,7 @@ pipeline {
 	            allowMissing: false,
 	            alwaysLinkToLastBuild: false,
 	            keepAll: false,
-	            reportDir: 'Reports',
+	            reportDir: '/home/jenkins/agent/workspace/magix_main/Reports',
 	            reportFiles: 'index.html',
 	            reportName: 'HTML Report',
 	            reportTitles: '',
