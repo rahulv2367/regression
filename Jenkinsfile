@@ -13,6 +13,7 @@ pipeline {
                 // Run your tests and generate JUnit test result XML files
                 script {
                     sh 'ls'
+		    sh 'cp -r /home/jenkins/agent/workspace/magix_main/Reports /var/jenkins_home/jobs/magix/branches/main/htmlreports/'
 		    sh 'java -jar MAGiX_installation/cmdlineMAGiX.jar -e  EnvironmentDetails.properties -u MAGiX_installation/TestArtefacts -testsuite "AWS" -ReportsDestination local -headless -PassPercentage 80 -p'
 		    sh 'ls -ltrh'
 		    sh 'pwd' 	
