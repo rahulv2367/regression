@@ -16,7 +16,8 @@ pipeline {
 //		    sh 'cp -r /home/jenkins/agent/workspace/magix_main/Reports /var/jenkins_home/jobs/magix/branches/main/htmlreports/'
 		    sh 'java -jar MAGiX_installation/cmdlineMAGiX.jar -e  EnvironmentDetails.properties -u MAGiX_installation/TestArtefacts -testsuite "AWS" -ReportsDestination local -headless -PassPercentage 50 -p'
 		    sh 'ls -ltrh'
-		    sh 'pwd' 	
+		    sh 'pwd'
+		    sh 'ls -lrth MAGiX_installation/Reports'
                 }
             }
         }
@@ -27,7 +28,7 @@ pipeline {
 	            allowMissing: false,
 	            alwaysLinkToLastBuild: false,
 	            keepAll: false,
-	            reportDir: '/var/jenkins_home/jobs/magix/branches/main/htmlreports',
+	            reportDir: '/home/jenkins/agent/workspace/magix_main/MAGiX_installation/Reports',
 	            reportFiles: 'index.html',
 	            reportName: 'HTML Report',
 	            reportTitles: '',
