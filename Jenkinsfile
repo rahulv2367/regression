@@ -14,6 +14,8 @@ pipeline {
                 script {
                     sh 'ls'
 		    sh 'java -jar MAGiX_installation/cmdlineMAGiX.jar -e  EnvironmentDetails.properties -u MAGiX_installation/TestArtefacts -testsuite "AWS" -ReportsDestination local -headless -PassPercentage 80 -p'
+		    sh 'ls -ltrh'
+		    sh 'pwd' 	
                 }
             }
         }
